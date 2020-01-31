@@ -5,7 +5,7 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Public class 
+    /// Public class representing the Angry Chicken entree
     /// </summary>
     public class AngryChicken
     {

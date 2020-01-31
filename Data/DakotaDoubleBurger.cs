@@ -5,70 +5,76 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class representing the trail burger entree
+    /// Class representing the dakota burger entree
     /// </summary>
-    public class TrailBurger
+   public  class DakotaDoubleBurger
     {
+
         /// <summary>
-        /// The price of the Trailburger
+        /// The price of the Dakota burger
         /// </summary>
         public double Price
         {
             get
             {
-                return 4.50;
+                return 5.20;
             }
         }
 
         /// <summary>
-        /// The calories of the Trailburger
+        /// The calories of the Dakota burger
         /// </summary>
         public uint Calories
         {
             get
             {
-                return 288;
+                return 464;
             }
         }
 
         /// <summary>
-        /// If the Trail Burger should be served with ketchup 
+        /// If the Dakota Burger should be served with ketchup 
         /// </summary>
-        public bool Ketchup { get; set; } = true; 
+        public bool Ketchup { get; set; } = true;
 
         /// <summary>
-        /// If the Trail Burger should be served with Mustard
+        /// If the Dakota Burger should be served with Mustard
         /// </summary>
         public bool Mustard { get; set; } = true;
 
         /// <summary>
-        /// If the Trail Burger should be served with pickles 
+        /// If the Dakota Burger should be served with pickles 
         /// </summary>
         public bool Pickle { get; set; } = true;
 
-      
         /// <summary>
-        /// Ensures that the Trail Burger intially has cheese
+        /// If the Dakota Burger should be served with cheese 
         /// </summary>
-        private bool cheese = true;
+        public bool Cheese { get; set; } = true;
 
         /// <summary>
-        /// If the Trail Burger should be served with cheese 
+        /// If the Dakota Burger should be served with buns
         /// </summary>
-        public bool Cheese
-        {
-            get { return cheese; }
-            set { cheese = value; }
-        }
+        public bool Bun { get; set; } = true;
 
         /// <summary>
-        /// If the Trail Burger should be served with bun 
+        /// If the Dakota Burger should have Tomato 
         /// </summary>
-        public bool Bun { get; set; } = true; 
+        public bool Tomato { get; set; } = true;
+
+        /// <summary>
+        /// If the Dakota Burger should have Lettuce  
+        /// </summary>
+        public bool Lettuce { get; set; } = true;
+
+        /// <summary>
+        /// If the Dakota Burger should have Mayo 
+        /// </summary>
+        public bool Mayo { get; set; } = true;
 
 
         /// <summary>
-        /// Provides special instructions for the Trail Burger 
+        /// Provides special instructions for the Dakota Burger 
         /// </summary>
         public List<string> SpecialInstructions
         {
@@ -95,9 +101,25 @@ namespace CowboyCafe.Data
                 {
                     instructions.Add("hold bun");
                 }
+                if (!Tomato)
+                {
+                    instructions.Add("hold tomato"); 
+                }
+                if (!Lettuce)
+                {
+                    instructions.Add("hold lettuce");
+                }
+                if (!Mayo)
+                {
+                    instructions.Add("hold mayo");
+                }
 
                 return instructions;
             }
         }
+
+
+
+
     }
 }
