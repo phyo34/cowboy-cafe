@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
-{	public class ChiliCheeseFries : Side
+{	public  class ChiliCheeseFries : Side
 	{
 		public override uint Calories
 		{
