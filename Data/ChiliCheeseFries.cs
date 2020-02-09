@@ -1,7 +1,7 @@
 ﻿/*
 * Author: May Phyo
 * Class: CIS 400 A
-* Purpose: Creates the chili cheese fries side
+* Purpose: Creates the Chili Cheese Fries Side
 */
 
 using System;
