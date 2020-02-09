@@ -1,9 +1,18 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: Creates the abstract class representing the entrees
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Abstract class representing the entree 
+    /// </summary>
    public abstract  class Entree
     {
         /// <summary>

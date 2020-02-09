@@ -1,10 +1,23 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: Creates the chili cheese fries side
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
-{	public  class ChiliCheeseFries : Side
+/// <summary>
+/// Public class representing the chili cheese fries side 
+/// </summary>
+{
+	public  class ChiliCheeseFries : Side
 	{
+		/// <summary>
+		/// The calories of the chili cheese fries side 
+		/// </summary>
 		public override uint Calories
 		{
 		
@@ -23,8 +36,10 @@ namespace CowboyCafe.Data
 				}
 			}
 		}
-	
 
+		/// <summary>
+		/// Price of the chili cheese fries 
+		/// </summary>
 		public override double Price
 		{
 			get

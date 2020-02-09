@@ -1,11 +1,24 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: Creates the Pan De Campo side 
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+	/// <summary>
+	/// Class representing the Pan De Campo Side 
+	/// </summary>
     public class PanDeCampo : Side 
     {
+		/// <summary>
+		/// The calories of the Pan De Campo side 
+		/// </summary>
 
 		public override uint Calories
 		{
@@ -26,7 +39,9 @@ namespace CowboyCafe.Data
 			}
 		}
 
-
+		/// <summary>
+		/// Price of the chili cheese fries 
+		/// </summary>
 		public override double Price
 		{
 			get

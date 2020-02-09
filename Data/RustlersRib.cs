@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: Creates the Rustler Rib entree
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

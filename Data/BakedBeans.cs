@@ -1,12 +1,24 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: Creates the baked bean sides 
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class BakedBeans : Side
+	/// <summary>
+	/// Public class representing the baked bean side 
+	/// </summary>
+	public class BakedBeans : Side
     {
-
+		/// <summary>
+		/// The calories of the baked bean side 
+		/// </summary>
 		public override uint Calories
 		{
 
@@ -26,7 +38,9 @@ namespace CowboyCafe.Data
 			}
 		}
 
-
+		/// <summary>
+		/// Price of the baked bean side 
+		/// </summary>
 		public override double Price
 		{
 			get

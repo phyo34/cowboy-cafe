@@ -1,12 +1,24 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: Creates the corn dodger side 
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-   public class CornDodgers : Side
+	/// <summary>
+	/// Public class representing the corn dodger side 
+	/// </summary>
+	public class CornDodgers : Side
     {
-
+		/// <summary>
+		/// The calories of the corn dodgers side
+		///  </summary>
 
 		public override uint Calories
 		{
@@ -26,7 +38,9 @@ namespace CowboyCafe.Data
 				}
 			}
 		}
-
+		/// <summary>
+		/// Price of the corn dodger side 
+		/// </summary>
 
 		public override double Price
 		{

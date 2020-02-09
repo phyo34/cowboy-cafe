@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+* Author:Nathan Bean
+* Class: CIS 400 A
+* Purpose: Creates the base class reprsenting the sides 
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
