@@ -36,7 +36,6 @@ namespace CowboyCafe.Data
                 }
             }
         }
-
         /// <summary>
         /// The calories of the Cowboy Coffee
         /// </summary>
@@ -87,9 +86,6 @@ namespace CowboyCafe.Data
                 {
                     instructions.Add("Room for Cream");
                 }
-
-
-
                 return instructions;
             }
         }
