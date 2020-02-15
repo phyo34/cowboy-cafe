@@ -1,9 +1,8 @@
 ﻿/*
 * Author: May Phyo
 * Class: CIS 400 A
-* Purpose: Creates the Cowboy Coffee
+* Purpose: Creates the water drink
 */
-
 
 using System;
 using System.Collections.Generic;
@@ -12,13 +11,14 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class representing the Cowboy Coffee
+    /// Class representing water 
     /// </summary>
-    public class CowboyCoffee : Drink
+    public class Water : Drink
     {
-      /// <summary>
-      /// The price of the Cowboy Coffee
-      /// </summary>
+
+        /// <summary>
+        /// The price of the water
+        /// </summary>
         public override double Price
         {
             get
@@ -26,11 +26,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 0.60;
+                        return 0.12;
                     case Size.Medium:
-                        return 1.10;
+                        return 0.12;
                     case Size.Large:
-                        return 1.60;
+                        return 0.12;
                     default:
                         throw new NotImplementedException();
                 }
@@ -38,7 +38,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calories of the Cowboy Coffee
+        /// The calories of the water
         /// </summary>
         public override uint Calories
         {
@@ -47,45 +47,39 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 3;
+                        return 0;
                     case Size.Medium:
-                        return 5;
+                        return 0;
                     case Size.Large:
-                        return 7;
+                        return 0;
                     default:
                         throw new NotImplementedException();
                 }
             }
         }
-        /// <summary>
-        /// If the coffee is decaf 
-        /// </summary>
-        public bool Decaf  { get; set; }
-        /// <summary>
-        /// If there is room for cream 
-        /// </summary>
-        public bool RoomForCream { get; set; } = false;
 
         /// <summary>
-        /// If the coffe should be served with Ice
+        /// If the water is served with lemons
         /// </summary>
-        public override bool Ice { get;set; } = false; 
+        public bool Lemon { get; set; } = false;
+
+
 
         /// <summary>
-        /// Provides special instructions for the Cowboy Coffee 
+        /// Provides special instructions for the Texas Tea
         /// </summary>
         public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
-                if (Ice)
+                if (!Ice)
                 {
-                    instructions.Add("Add Ice");
+                    instructions.Add("Hold Ice");
                 }
-                if (RoomForCream)
+                if (Lemon)
                 {
-                    instructions.Add("Room for Cream");
+                    instructions.Add("Add Lemon");
                 }
 
 

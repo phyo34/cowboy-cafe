@@ -1,12 +1,24 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: Creates the jerked soda drink
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    //Class reprsenting jerked soda
+    /// <summary>
+    ///  Class reprsenting jerked soda
+    /// </summary>
+
     public class JerkedSoda : Drink
     {
+        /// <summary>
+        ///   The price of a jerked soda 
+        /// </summary>
+
         public override double Price
         {
             get
@@ -25,7 +37,9 @@ namespace CowboyCafe.Data
             }
         }
     
-    
+    /// <summary>
+    /// The calories of the jerked soda
+    /// </summary>
         public override uint Calories {
             get
             {
@@ -43,8 +57,16 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// The flavor of the soda 
+        /// </summary>
         public SodaFlavor Flavor { get; set; }
 
+ 
+
+        /// <summary>
+        /// Provides special instructions for the jerked soda
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get

@@ -14,9 +14,12 @@ namespace CowboyCafe.Data
 
         //The calories of the drink
         public abstract uint Calories { get; }
-        
-        //The drink has ice
-        public bool Ice { get; set; } = true; 
+
+        /// <summary>
+        ///    The drink has ice
+        /// </summary>
+
+        public virtual bool Ice { get; set; } = true; 
 
         //The special instructions for the drink 
         public abstract List<string> SpecialInstructions { get; }
