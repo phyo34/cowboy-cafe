@@ -89,5 +89,18 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of this object
+        /// </summary>
+        /// <returns>The string describing the Texas Triple Burger</returns>
+        public override string ToString()
+        {
+            string s = Size.ToString() + " ";
+            if (Decaf) return s + "Decaf Cowboy Coffee";
+            else return s + "Cowboy Coffee";
+
+
+        }
     }
 }
