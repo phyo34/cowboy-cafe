@@ -64,7 +64,7 @@ namespace CowboyCafe.Data
 		/// <returns>The string describing the Chili Cheese Fries</returns>
 		public override string ToString()
 		{
-			return Size.ToString() + " Chili Cheese Friess";
+			return Size.ToString() + " Chili Cheese Fries";
 		}
 
 	}
