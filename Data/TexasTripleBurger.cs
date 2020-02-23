@@ -151,7 +151,6 @@ namespace CowboyCafe.Data
         {
             return "Texas Triple Burger";
 
-
         }
     }
 }

@@ -93,7 +93,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Returns the string representation of this object
         /// </summary>
-        /// <returns>The string describing the Texas Triple Burger</returns>
+        /// <returns>The string describing the Cowboy Coffee</returns>
         public override string ToString()
         {
             string s = Size.ToString() + " ";

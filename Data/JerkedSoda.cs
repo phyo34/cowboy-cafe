@@ -82,5 +82,26 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of this object
+        /// </summary>
+        /// <returns>The string describing the Jerked Soda/returns>
+        public override string ToString()
+        {
+            string s = Size.ToString() + " ";
+            string flavor  = Flavor.ToString();
+            if (flavor.Equals("CreamSoda"))
+                return s + "Cream Soda Jerked Soda";
+            else if (flavor.Equals("OrangeSoda"))
+                return s + "Orange Soda Jerked Soda";
+            else if (flavor.Equals("Sarsparilla"))
+                return s + "Sarsparilla Jerked Soda";
+            else if (flavor.Equals("BirchBeer"))
+                return s + "Birch Beer Jerked Soda";
+            else
+                return s + "Root Beer Jerked Soda";
+
+        }
     }
 }

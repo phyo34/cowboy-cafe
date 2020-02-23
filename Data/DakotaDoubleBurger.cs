@@ -132,8 +132,6 @@ namespace CowboyCafe.Data
         public override string ToString()
         {
             return "Dakota Double";
-
-
         }
 
 
