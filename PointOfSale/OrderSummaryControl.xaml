@@ -5,10 +5,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="300">
     <Grid>
-        <TextBlock> Order</TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200">
+            </ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="30"  Background="Blue" Foreground="White"> Order </TextBlock>
+
+        <TextBlock FontSize="10"  HorizontalAlignment="Center" Background="Blue" Foreground="White" Text="{Binding  Path = lastOrderNumber}"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="0" Background="Blue"></TextBlock>
         
-            
+        
+        <ListBox Name ="itemList" ItemsSource="{Binding Path = Items}" Grid.Row="1" Grid.Column="0">
+        </ListBox>
+        <ListBox Name="priceList" ItemsSource="{Binding Path = Items.Price}" Grid.Row="1" Grid.Column="1">
+        </ListBox>
+        <TextBox Grid.Row="2" Grid.Column="0" FontSize="30">Subtotal</TextBox>
+        <TextBox Text ="{Binding Path=Subtotal, StringFormat=c}" Grid.Row="2" Grid.Column="1" />
+
+
+
+
+
     </Grid>
 </UserControl>
