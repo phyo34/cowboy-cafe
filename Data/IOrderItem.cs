@@ -8,16 +8,18 @@ namespace CowboyCafe.Data
     /// An interface representing a single item in an order 
     /// </summary>
     public interface IOrderItem
+
     {
+
         /// <summary>
         /// The price of this order item 
         /// </summary>
-        double Price { get; }
+        public double Price { get; }
 
         /// <summary>
         /// The special instructions for this order 
         /// </summary>
-        IEnumerable<string> SpecialInstructions { get; }
+        public List<string> SpecialInstructions { get; }
     }
 
 }

@@ -56,7 +56,10 @@ namespace PointOfSale
         /// <param name="e">The event</param>
         void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new CowpokeChili());
+            if (DataContext is Order data)
+            {
+                data.Add(new CowpokeChili());
+            }
         }
 
         /// <summary>
@@ -66,7 +69,8 @@ namespace PointOfSale
         /// <param name="e">The event</param>
         void OnAddRustlersRibButtonClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new RustlersRibs());
+            if (DataContext is Order data)
+            data.Add(new RustlersRibs());
         }
 
         /// <summary>
@@ -76,7 +80,8 @@ namespace PointOfSale
         /// <param name="e">The event</param>
         void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new PecosPulledPork());
+            if (DataContext is Order data)
+            data.Add(new PecosPulledPork());
         }
 
         /// <summary>
@@ -86,7 +91,8 @@ namespace PointOfSale
         /// <param name="e">The event</param>
         void OnAddTrailBurgerClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new TrailBurger());
+            if(DataContext is Order data)
+            data.Add(new TrailBurger());
         }
 
         /// <summary>
@@ -96,7 +102,8 @@ namespace PointOfSale
         /// <param name="e">The event</param>
         void OnAddDakotaDoubleClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new DakotaDoubleBurger());
+            if (DataContext is Order data)
+            data.Add(new DakotaDoubleBurger());
         }
 
         /// <summary>
@@ -106,7 +113,8 @@ namespace PointOfSale
         /// <param name="e">The event</param>
         void OnAddTexasTripleBurgerClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new TexasTripleBurger());
+            if(DataContext is Order data)
+           data.Add(new TexasTripleBurger());
         }
 
         /// <summary>
@@ -116,7 +124,8 @@ namespace PointOfSale
         /// <param name="e">The event</param>
         void OnAddAngryChickenClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new AngryChicken());
+            if(DataContext is Order data )
+            data.Add(new AngryChicken());
         }
 
         /// <summary>
@@ -126,7 +135,8 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         void OnAddWaterClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new Water());
+            if (DataContext is Order data)
+           data.Add(new Water());
         }
 
         /// <summary>
@@ -136,7 +146,8 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         void OnAddJerkedSodaClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new JerkedSoda());
+            if(DataContext is Order data)
+           data.Add(new JerkedSoda());
         }
 
         /// <summary>
@@ -146,7 +157,8 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         void OnAddCowboyCoffeeClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new CowboyCoffee());
+            if(DataContext is Order data)
+            data.Add(new CowboyCoffee());
         }
 
         /// <summary>
@@ -156,7 +168,8 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         void OnAddTexasTeaClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new TexasTea());
+            if(DataContext is Order data)
+            data.Add(new TexasTea());
         }
 
         /// <summary>
@@ -166,7 +179,8 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         void OnAddChiliCheeseFriesClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new ChiliCheeseFries());
+            if(DataContext is Order data)
+            data.Add(new ChiliCheeseFries());
         }
 
 
@@ -177,7 +191,8 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         void OnAddCornDodgersClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new CornDodgers());
+            if(DataContext is Order data)
+           data.Add(new CornDodgers());
         }
 
 
@@ -188,7 +203,8 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         void OnAddPanDeCampoClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new PanDeCampo());
+            if (DataContext is Order data)
+          data.Add(new PanDeCampo());
         }
 
         /// <summary>
@@ -198,7 +214,8 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         void OnAddBakedBeansClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new BakedBeans());
+            if (DataContext is Order data )
+            data.Add(new BakedBeans());
         }
 
     }

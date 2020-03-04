@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="250">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200">
+            <ColumnDefinition Width="210">
             </ColumnDefinition>
             <ColumnDefinition>
             </ColumnDefinition>
@@ -19,19 +19,20 @@
             <RowDefinition Height="50"/>
 
         </Grid.RowDefinitions>
-        <TextBlock FontSize="30"  Background="Blue" Foreground="White"> Order </TextBlock>
+        <TextBlock FontSize="30"  Background="Red" Foreground="White"> Order </TextBlock>
 
-        <TextBlock FontSize="10"  HorizontalAlignment="Center" Background="Blue" Foreground="White" Text="{Binding  Path = lastOrderNumber}"/>
+        <TextBlock FontSize="30"  HorizontalAlignment="Center" Background="Red" Foreground="White" Text="{Binding Path = OrderNumber}"/>
 
-        <TextBlock Grid.Column="1" Grid.Row="0" Background="Blue"></TextBlock>
-        
-        
+        <TextBlock Grid.Column="1" Grid.Row="0" Background="Red"></TextBlock>
+
+
         <ListBox Name ="itemList" ItemsSource="{Binding Path = Items}" Grid.Row="1" Grid.Column="0">
         </ListBox>
-        <ListBox Name="priceList" ItemsSource="{Binding Path = Items.Price}" Grid.Row="1" Grid.Column="1">
+        <ListBox Name="priceList" ItemsSource="{Binding Path = Items}" Grid.Row="1" Grid.Column="1">
+            
         </ListBox>
         <TextBox Grid.Row="2" Grid.Column="0" FontSize="30">Subtotal</TextBox>
-        <TextBox Text ="{Binding Path=Subtotal, StringFormat=c}" Grid.Row="2" Grid.Column="1" />
+        <TextBox Text ="{Binding Path=Subtotal, Mode =OneWay,StringFormat=c}" Grid.Row="2" Grid.Column="1" />
 
 
 

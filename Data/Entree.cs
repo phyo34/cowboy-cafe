@@ -8,17 +8,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CowboyCafe.Data
+namespace CowboyCafe.Data 
 {
     /// <summary>
     /// Abstract class representing the entree 
     /// </summary>
-   public abstract  class Entree
+   public abstract  class Entree : IOrderItem
     {
         /// <summary>
         /// Gets the special instructions of the entree
         /// </summary>
-        public abstract List<string> SpecialInstructions { get; }
+        public abstract List <string> SpecialInstructions { get; }
 
 
         /// <summary>

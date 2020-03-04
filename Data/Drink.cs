@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public abstract class Drink
+    public abstract class Drink : IOrderItem
     {
         //The size of the drink
         public Size Size { get; set; } = Size.Small; 
@@ -20,8 +20,9 @@ namespace CowboyCafe.Data
         /// </summary>
 
         public virtual bool Ice { get; set; } = true; 
-
-        //The special instructions for the drink 
+        /// <summary>
+        /// Gets the special instrutions
+        /// </summary>
         public abstract List<string> SpecialInstructions { get; }
         
         

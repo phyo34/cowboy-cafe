@@ -20,5 +20,22 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        public OrderControl () {
+            InitializeComponent();
+            //Variable that does 
+            DataContext = new Order(); 
+
+            }
+
+        private void CancelOrder(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Order();
+        }
+
+        private void CompleteOrder(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Order();
+
+        }
     }
 }
