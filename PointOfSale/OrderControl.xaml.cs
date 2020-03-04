@@ -37,5 +37,14 @@ namespace PointOfSale
             DataContext = new Order();
 
         }
+
+        /// <summary>
+        /// Changing what the border is containing to the new elemenet passes in
+        /// </summary>
+        /// <param name="element">Passing in element</param>
+        public void SwapScreen(UIElement element)
+        {
+            Container.Child = element ;
+        }
     }
 }

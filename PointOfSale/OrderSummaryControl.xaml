@@ -4,12 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
-             mc:Ignorable="d" d:DesignWidth="180" Height="347">
-    <Grid>
-        <StackPanel>
+             mc:Ignorable="d" d:DesignWidth="200" Height="370">
+    <UserControl.Resources>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Height="305" VerticalAlignment="Top">
+        <StackPanel Margin="0,0,0,10">
             <Grid Height="39">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
+                    <ColumnDefinition />
                     <ColumnDefinition Width="34"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -17,7 +22,7 @@
                     <RowDefinition Height="38"/>
                 </Grid.RowDefinitions>
                 <TextBlock FontSize="15" Foreground="Black" Margin="0,0,100,3"><Run Text="Order"/></TextBlock>
-                <TextBlock FontSize="15" Foreground="Black"  Grid.Column="0"   Grid.Row="0" Text="{Binding OrderNumber}" RenderTransformOrigin="-1.31,-0.616" Margin="0,1,0,2" HorizontalAlignment="Center" Width="44"/>
+                <TextBlock FontSize="15" Foreground="Black"  Grid.Column="0"    Grid.Row="0" Text="{Binding OrderNumber}" RenderTransformOrigin="-1.31,-0.616" Margin="0,1,0,2" HorizontalAlignment="Center" Width="44"/>
 
             </Grid>
 
@@ -27,7 +32,7 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
-                                <ColumnDefinition Width="154"/>
+                                <ColumnDefinition Width="104"/>
 
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="{Binding}"/>
@@ -51,7 +56,7 @@
                 <TextBox Grid.Column="0" FontSize="15" Margin="0,0,0,44" RenderTransformOrigin="0.5,0.5">
                     Subtotal
                 </TextBox>
-                <TextBlock Text ="{Binding Path=Subtotal, Mode =OneWay,StringFormat=c}" Grid.Column="1"  />
+                <TextBlock Text ="{Binding Path=Subtotal, Mode =OneWay,StringFormat=c}" Grid.Column="1" Margin="10,0,0,0"  />
             </Grid>
         </StackPanel>
 

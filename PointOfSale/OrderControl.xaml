@@ -8,7 +8,7 @@
 
     <Grid HorizontalAlignment="Center" Width="1138">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="700"/>
+            <ColumnDefinition Width="600"/>
             <ColumnDefinition />
 
         </Grid.ColumnDefinitions>
@@ -16,10 +16,13 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="300"/>
         </Grid.RowDefinitions>
-        <local:OrderSummaryControl Grid.Row="1" Margin="633,27,0,-74" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="439"/>
-        <local:MenuItemSelectionControl Grid.Column="0" Grid.Row="1" Margin="-10,10,0,-175" HorizontalAlignment="Left" Width="643"/>
+        <Border x:Name="Container" Grid.Column="0" Grid.Row="1">
+
+            <local:MenuItemSelectionControl Grid.Column="0" Grid.Row="1" Margin="-10,10,0,-175" HorizontalAlignment="Left" Width="643"/>
+        </Border>
+        <local:OrderSummaryControl Grid.Row="1" Margin="44,10,0,0" HorizontalAlignment="Left" Width="433" Grid.Column="1" Height="450" VerticalAlignment="Top"/>
         <Button  Grid.Column="0" Background="Blue" Foreground="White" Margin="350,0,46,0" Click="CancelOrder" >Cancel Order</Button>
-        <Button Grid.Column="1" Background="Blue" Foreground="White" HorizontalContentAlignment="Center"   Margin="0,0,10,0" Click="CompleteOrder">Complete Order</Button>
+        <Button Grid.Column="1" Background="Blue" Foreground="White" HorizontalContentAlignment="Center" Margin="0,0,10,0" Click="CompleteOrder">Complete Order</Button>
         <Button Grid.Column="0" Background="Blue" Foreground="White" Margin="0,0,376,0">Item Selection</Button>
 
 

@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using Extensions;
 
 namespace PointOfSale
 {
@@ -19,7 +20,8 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
-       
+
+
         /// <summary>
         /// Button Click event intialized 
         /// </summary>
@@ -47,19 +49,25 @@ namespace PointOfSale
 
 
 
-
         }
         /// <summary>
         /// Button representing click event for cowpoke chili
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event</param>
-        void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
+        public void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
         {
+
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order data)
             {
-                data.Add(new CowpokeChili());
+                var entree = new CowpokeChili();
+                var screen = new CustomizeCowPokeChili();
+                screen.DataContext = entree;
+                data.Add(entree);
+               
             }
+            orderControl.SwapScreen(new CustomizeCowPokeChili());
         }
 
         /// <summary>
@@ -69,8 +77,12 @@ namespace PointOfSale
         /// <param name="e">The event</param>
         void OnAddRustlersRibButtonClicked(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             data.Add(new RustlersRibs());
+            orderControl.SwapScreen(new CustomizeCowPokeChili());
+
         }
 
         /// <summary>
@@ -78,8 +90,10 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event</param>
-        void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
+        public void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             data.Add(new PecosPulledPork());
         }
@@ -89,9 +103,11 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event</param>
-        void OnAddTrailBurgerClicked(object sender, RoutedEventArgs e)
+       public void OnAddTrailBurgerClicked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order data)
             data.Add(new TrailBurger());
         }
 
@@ -100,8 +116,10 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event</param>
-        void OnAddDakotaDoubleClicked(object sender, RoutedEventArgs e)
+        public void OnAddDakotaDoubleClicked(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             data.Add(new DakotaDoubleBurger());
         }
@@ -111,9 +129,11 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event</param>
-        void OnAddTexasTripleBurgerClicked(object sender, RoutedEventArgs e)
+        public void OnAddTexasTripleBurgerClicked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order data)
            data.Add(new TexasTripleBurger());
         }
 
@@ -122,9 +142,11 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event</param>
-        void OnAddAngryChickenClicked(object sender, RoutedEventArgs e)
+        public void OnAddAngryChickenClicked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order data )
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order data )
             data.Add(new AngryChicken());
         }
 
@@ -133,8 +155,10 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event </param>
-        void OnAddWaterClicked(object sender, RoutedEventArgs e)
+        public void OnAddWaterClicked(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
            data.Add(new Water());
         }
@@ -144,9 +168,11 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event </param>
-        void OnAddJerkedSodaClicked(object sender, RoutedEventArgs e)
+        public void OnAddJerkedSodaClicked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order data)
            data.Add(new JerkedSoda());
         }
 
@@ -155,9 +181,11 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event </param>
-        void OnAddCowboyCoffeeClicked(object sender, RoutedEventArgs e)
+        public void OnAddCowboyCoffeeClicked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order data)
             data.Add(new CowboyCoffee());
         }
 
@@ -166,9 +194,11 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event </param>
-        void OnAddTexasTeaClicked(object sender, RoutedEventArgs e)
+        public void OnAddTexasTeaClicked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order data)
             data.Add(new TexasTea());
         }
 
@@ -177,9 +207,11 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event </param>
-        void OnAddChiliCheeseFriesClicked(object sender, RoutedEventArgs e)
+        public void OnAddChiliCheeseFriesClicked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order data)
             data.Add(new ChiliCheeseFries());
         }
 
@@ -189,7 +221,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event </param>
-        void OnAddCornDodgersClicked(object sender, RoutedEventArgs e)
+        public void OnAddCornDodgersClicked(object sender, RoutedEventArgs e)
         {
             if(DataContext is Order data)
            data.Add(new CornDodgers());
@@ -203,6 +235,8 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         void OnAddPanDeCampoClicked(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
           data.Add(new PanDeCampo());
         }
@@ -212,11 +246,34 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event </param>
-        void OnAddBakedBeansClicked(object sender, RoutedEventArgs e)
+        public void OnAddBakedBeansClicked(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data )
             data.Add(new BakedBeans());
         }
+
+        //public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
+        //{
+        //    var orderControl = this.FindAncestor<OrderControl>();
+        //    if (DataContext is Order order)
+        //    {
+        //        if (sender is Button button)
+        //        {
+        //            switch (button.Tag)
+        //            {
+        //                case "CowpokeChili":
+        //                    order.Add(new CowpokeChili());
+        //                    orderControl.SwapScreen(new CustomizeCowPokeChili());
+        //                    break;
+
+
+        //            }
+        //        }
+        //    }
+        //}
+
 
     }
 }
