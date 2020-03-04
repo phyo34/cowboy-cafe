@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
-             mc:Ignorable="d" Height="600" Width="1110">
+             mc:Ignorable="d" Height="600" Width="1240">
 
     <Grid HorizontalAlignment="Center" Width="1138">
         <Grid.ColumnDefinitions>
@@ -16,10 +16,10 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="300"/>
         </Grid.RowDefinitions>
-        <local:OrderSummaryControl Grid.Column="1" Grid.Row="1" Margin="0,0,0,-101"/>
-        <local:MenuItemSelectionControl Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="49,10,389,-175"/>
-        <Button  Grid.Column="0" Background="Blue" Foreground="White"  Margin="350,0,46,0" Click="CancelOrder" >Cancel Order</Button>
-        <Button Grid.Column="1" Background="Blue" Foreground="White" HorizontalContentAlignment="Center"   Margin="0,0,111,0" Click="CompleteOrder">Complete Order</Button>
+        <local:OrderSummaryControl Grid.Row="1" Margin="633,27,0,-74" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="439"/>
+        <local:MenuItemSelectionControl Grid.Column="0" Grid.Row="1" Margin="-10,10,0,-175" HorizontalAlignment="Left" Width="643"/>
+        <Button  Grid.Column="0" Background="Blue" Foreground="White" Margin="350,0,46,0" Click="CancelOrder" >Cancel Order</Button>
+        <Button Grid.Column="1" Background="Blue" Foreground="White" HorizontalContentAlignment="Center"   Margin="0,0,10,0" Click="CompleteOrder">Complete Order</Button>
         <Button Grid.Column="0" Background="Blue" Foreground="White" Margin="0,0,376,0">Item Selection</Button>
 
 

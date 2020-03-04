@@ -4,35 +4,57 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="250">
+             mc:Ignorable="d" d:DesignWidth="180" Height="347">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="210">
-            </ColumnDefinition>
-            <ColumnDefinition>
-            </ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition/>
-            <RowDefinition Height="50"/>
+        <StackPanel>
+            <Grid Height="39">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="34"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
 
-        </Grid.RowDefinitions>
-        <TextBlock FontSize="30"  Background="Red" Foreground="White"> Order </TextBlock>
+                    <RowDefinition Height="38"/>
+                </Grid.RowDefinitions>
+                <TextBlock FontSize="15" Foreground="Black" Margin="0,0,100,3"><Run Text="Order"/></TextBlock>
+                <TextBlock FontSize="15" Foreground="Black"  Grid.Column="0"   Grid.Row="0" Text="{Binding OrderNumber}" RenderTransformOrigin="-1.31,-0.616" Margin="0,1,0,2" HorizontalAlignment="Center" Width="44"/>
 
-        <TextBlock FontSize="30"  HorizontalAlignment="Center" Background="Red" Foreground="White" Text="{Binding Path = OrderNumber}"/>
+            </Grid>
 
-        <TextBlock Grid.Column="1" Grid.Row="0" Background="Red"></TextBlock>
+            <ListBox ItemsSource="{Binding Path=Items}" Height="225">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="154"/>
+
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding}"/>
+                            <TextBlock HorizontalAlignment="Right"   Grid.Column="1" Text="{Binding Path = Price }"/>
 
 
-        <ListBox Name ="itemList" ItemsSource="{Binding Path = Items}" Grid.Row="1" Grid.Column="0">
-        </ListBox>
-        <ListBox Name="priceList" ItemsSource="{Binding Path = Items}" Grid.Row="1" Grid.Column="1">
-            
-        </ListBox>
-        <TextBox Grid.Row="2" Grid.Column="0" FontSize="30">Subtotal</TextBox>
-        <TextBox Text ="{Binding Path=Subtotal, Mode =OneWay,StringFormat=c}" Grid.Row="2" Grid.Column="1" />
+                        </Grid>
+
+
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Grid >
+
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" FontSize="15" Margin="0,0,0,44" RenderTransformOrigin="0.5,0.5">
+                    Subtotal
+                </TextBox>
+                <TextBlock Text ="{Binding Path=Subtotal, Mode =OneWay,StringFormat=c}" Grid.Column="1"  />
+            </Grid>
+        </StackPanel>
+
 
 
 
