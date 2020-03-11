@@ -26,17 +26,19 @@
 
             </Grid>
 
-            <ListBox ItemsSource="{Binding Path=Items}" Height="225">
+            <ListBox ItemsSource="{Binding Path=Items}" Height="225"  Width="194">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition Width="104"/>
+                          
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row ="0" Text="{Binding}"/>
+                            <TextBlock HorizontalAlignment="Right"   Grid.Row="0" Text="{Binding Path = Price }"/>
 
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding}"/>
-                            <TextBlock HorizontalAlignment="Right"   Grid.Column="1" Text="{Binding Path = Price }"/>
+                            <ListView ItemsSource="{Binding Path=SpecialInstructions}"  Grid.Row="1"></ListView>
 
 
                         </Grid>
@@ -53,10 +55,10 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="120"/>
                 </Grid.ColumnDefinitions>
-                <TextBox Grid.Column="0" FontSize="15" Margin="0,0,0,44" RenderTransformOrigin="0.5,0.5">
+                <TextBox Grid.Column="0" FontSize="15">
                     Subtotal
                 </TextBox>
-                <TextBlock Text ="{Binding Path=Subtotal, Mode =OneWay,StringFormat=c}" Grid.Column="1" Margin="10,0,0,0"  />
+                <TextBlock Text ="{Binding Path=Subtotal, Mode =OneWay,StringFormat=c}" Grid.Column="1"  />
             </Grid>
         </StackPanel>
 

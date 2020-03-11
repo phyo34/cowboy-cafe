@@ -8,13 +8,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Public class representing the Angry Chicken entree
     /// </summary>
-    public class AngryChicken : Entree
+    public class AngryChicken : Entree,INotifyPropertyChanged
     {
         /// <summary>
         /// The price of the Angry Chicken 
@@ -48,14 +49,21 @@ namespace CowboyCafe.Data
         public bool Bread
         {
             get { return bread; }
-            set { bread = value; }
+            set { bread = value; NotifyOfPropertyChange("Bread"); }
         }
 
         /// <summary>
+        /// Private backing variable for pickle 
+        /// </summary>
+        private bool pickle = true;
+        /// <summary>
         /// If the Angry Chicken should be served with pickles 
         /// </summary>
-        public bool Pickle { get; set; } = true; 
-
+        public bool Pickle
+        {
+            get { return pickle; }
+            set { pickle = value; NotifyOfPropertyChange("Pickle"); }
+        }
         /// <summary>
         /// Provides special instructions for the Angry Chicken
         /// </summary>

@@ -58,9 +58,19 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// Private backing variable for soda flavor 
+        /// </summary>
+
+        private SodaFlavor flavor;
+
+        /// <summary>
         /// The flavor of the soda 
         /// </summary>
-        public SodaFlavor Flavor { get; set; }
+        public SodaFlavor Flavor
+        {
+            get { return flavor; }
+            set { flavor = value; NotifyOfPropertyChange("Flavor"); }
+        }
 
  
 

@@ -37,20 +37,46 @@ namespace CowboyCafe.Data
             }
         }
 
+
+        /// <summary>
+        /// Private backing variable for ketchup
+        /// </summary>
+        private bool ketchup = true; 
         /// <summary>
         /// If the Trail Burger should be served with ketchup 
         /// </summary>
-        public bool Ketchup { get; set; } = true; 
+        public bool Ketchup
+        {
+            get { return ketchup; }
+            set { ketchup = value; NotifyOfPropertyChange("Ketchup"); }
+        } 
 
+        /// <summary>
+        /// Private 
+        /// </summary>
+        private bool mustard = true;
         /// <summary>
         /// If the Trail Burger should be served with Mustard
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard
+        {
+            get { return mustard; }
+            set { mustard = value; NotifyOfPropertyChange("Mustard"); }
+        }
+
+        /// <summary>
+        /// Private backing variable for pickles
+        /// </summary>
+        private bool pickle = true;
 
         /// <summary>
         /// If the Trail Burger should be served with pickles 
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get { return pickle; }
+            set { pickle = value; NotifyOfPropertyChange("Pickle"); }
+        } 
 
       
         /// <summary>
@@ -64,13 +90,21 @@ namespace CowboyCafe.Data
         public bool Cheese
         {
             get { return cheese; }
-            set { cheese = value; }
+            set { cheese = value; NotifyOfPropertyChange("Cheese"); }
         }
 
         /// <summary>
+        /// Private backing variable for buns
+        /// </summary>
+        private bool bun;
+        /// <summary>
         /// If the Trail Burger should be served with bun 
         /// </summary>
-        public bool Bun { get; set; } = true; 
+        public bool Bun
+        {
+            get { return bun; }
+            set { bun = value; NotifyOfPropertyChange("Bun"); }
+        } 
 
 
         /// <summary>

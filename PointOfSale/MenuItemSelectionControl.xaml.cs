@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: Creates the menu selection window
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -50,6 +56,29 @@ namespace PointOfSale
 
 
         }
+
+
+        /// <summary>
+        /// Helper method to display the special instructions
+        /// </summary>
+        /// <param name="item">The item</param>
+        /// <param name="screen">The screen</param>
+        void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
+        {
+            var order = DataContext as Order;
+            if (order == null) throw new Exception("Data expected to be an Order instance");
+
+            if (screen != null)
+            {
+                var orderControl = this.FindAncestor<OrderControl>();
+                if (orderControl == null) throw new Exception("An ancestor of order exception");
+                screen.DataContext = item;
+                orderControl.SwapScreen(screen);
+
+            }
+            order.Add(item);
+        }
+
         /// <summary>
         /// Button representing click event for cowpoke chili
         /// </summary>
@@ -63,15 +92,14 @@ namespace PointOfSale
             {
                 var entree = new CowpokeChili();
                 var screen = new CustomizeCowPokeChili();
-                screen.DataContext = entree;
-                data.Add(entree);
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
                
             }
-            orderControl.SwapScreen(new CustomizeCowPokeChili());
         }
 
         /// <summary>
-        /// Button representing click event for Rustler's Rib
+        /// Button representing click event for Rustler's Rib. Rustler's Rib cannot customize anything.
         /// </summary>
         /// <param name="sender">The button sender</param>
         /// <param name="e">The event</param>
@@ -81,7 +109,6 @@ namespace PointOfSale
 
             if (DataContext is Order data)
             data.Add(new RustlersRibs());
-            orderControl.SwapScreen(new CustomizeCowPokeChili());
 
         }
 
@@ -92,10 +119,16 @@ namespace PointOfSale
         /// <param name="e">The event</param>
         public void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<OrderControl>();
 
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order data)
-            data.Add(new PecosPulledPork());
+            {
+                var entree = new PecosPulledPork();
+                var screen = new CustomizePecosPulledPork();
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
         /// <summary>
@@ -106,9 +139,14 @@ namespace PointOfSale
        public void OnAddTrailBurgerClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
-
             if (DataContext is Order data)
-            data.Add(new TrailBurger());
+            {
+                var entree = new TrailBurger();
+                var screen = new CustomizeTrailBurger();
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
         /// <summary>
@@ -273,6 +311,7 @@ namespace PointOfSale
         //        }
         //    }
         //}
+
 
 
     }

@@ -8,13 +8,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class representing the Pecos Pulled Pork entree
     /// </summary>
-    public class PecosPulledPork : Entree
+    public class PecosPulledPork : Entree, INotifyPropertyChanged
     {
        
             /// <summary>
@@ -48,14 +49,23 @@ namespace CowboyCafe.Data
             /// </summary>
             public bool Bread
             {
-                get { return bread; }
-                set { bread = value; }
-            }
+               
+            get { return bread; }
+            set { bread = value; NotifyOfPropertyChange("Bread"); }
+             }
 
+            /// <summary>
+            /// private backing variable for pickles 
+            /// </summary>
+            private bool pickle = true;
             /// <summary>
             /// If the Pecos Pulled Pork should be served with pickles 
             /// </summary>
-            public bool Pickle { get; set; } = true;
+            public bool Pickle
+             {
+            get { return pickle; }
+            set { pickle = value; NotifyOfPropertyChange("Pickle"); }
+           } 
 
             /// <summary>
             /// Provides special instructions for the Pecos Pulled Pork 

@@ -75,15 +75,33 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Private backing variable for lemons
+        /// </summary>
+        private bool lemon = false;
         /// <summary>
         /// If the tea is served with lemons
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set { lemon = value; NotifyOfPropertyChange("Lemon"); }
+        }
 
+        /// <summary>
+        /// Private backing bool for sweetness of tea
+        /// </summary>
+
+        private bool sweet = true;
         /// <summary>
         /// If the tea is served sweet
         /// </summary>
-        public bool Sweet { get; set; } = true;
+        public bool Sweet
+        {
+            get { return sweet; }
+            set { sweet = value; NotifyOfPropertyChange("Sweet"); }
+        } 
 
         /// <summary>
         /// Provides special instructions for the Texas Tea

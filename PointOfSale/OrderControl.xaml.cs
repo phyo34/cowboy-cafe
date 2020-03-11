@@ -22,21 +22,33 @@ namespace PointOfSale
     {
         public OrderControl () {
             InitializeComponent();
-            //Variable that does 
+          
             DataContext = new Order(); 
 
             }
 
+        /// <summary>
+        /// Button that cancels order
+        /// </summary>
+        /// <param name="sender">The sender</param>
+        /// <param name="e">The event</param>
         private void CancelOrder(object sender, RoutedEventArgs e)
         {
             DataContext = new Order();
         }
 
+        /// <summary>
+        ///Button pressed when order is complete
+        /// </summary>
+        /// <param name="sender">The sender</param>
+        /// <param name="e">The event</param>
         private void CompleteOrder(object sender, RoutedEventArgs e)
         {
             DataContext = new Order();
 
         }
+
+      
 
         /// <summary>
         /// Changing what the border is containing to the new elemenet passes in
@@ -45,6 +57,16 @@ namespace PointOfSale
         public void SwapScreen(UIElement element)
         {
             Container.Child = element ;
+        }
+
+        /// <summary>
+        /// Clicking this allows users to go back to the menu selection
+        /// </summary>
+        /// <param name="sender">The sender</param>
+        /// <param name="e">The event</param>
+        private void ItemSelection(object sender, RoutedEventArgs e)
+        {
+            Container.Child = new MenuItemSelectionControl();
         }
     }
 }

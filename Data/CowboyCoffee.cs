@@ -8,13 +8,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class representing the Cowboy Coffee
     /// </summary>
-    public class CowboyCoffee : Drink
+    public class CowboyCoffee : Drink, INotifyPropertyChanged
     {
       /// <summary>
       /// The price of the Cowboy Coffee
@@ -56,19 +58,47 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+       /// <summary>
+       /// Private backing variable for decaf
+       /// </summary>
+        private bool decaf = false;
         /// <summary>
         /// If the coffee is decaf 
         /// </summary>
-        public bool Decaf  { get; set; }
+        public bool Decaf
+        {
+            get { return decaf; }
+            set { decaf = value; NotifyOfPropertyChange("Decaf"); }
+        }
+
+        /// <summary>
+        /// Private backing variable for room for cream
+        /// </summary>
+        private bool roomforcream = false;
         /// <summary>
         /// If there is room for cream 
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get { return roomforcream; }
+            set { roomforcream = value; NotifyOfPropertyChange("Room for Cream"); }
+        } 
 
+
+
+        /// <summary>
+        /// Private backing variable for room for ice
+        /// </summary>
+        private bool ice = false;
         /// <summary>
         /// If the coffe should be served with Ice
         /// </summary>
-        public override bool Ice { get;set; } = false; 
+        public override bool Ice
+        {
+            get { return ice; }
+            set { ice = value; NotifyOfPropertyChange("Ice"); }
+        } 
 
         /// <summary>
         /// Provides special instructions for the Cowboy Coffee 
@@ -77,7 +107,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 if (Ice)
                 {
                     instructions.Add("Add Ice");

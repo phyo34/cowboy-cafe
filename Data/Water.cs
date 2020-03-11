@@ -59,9 +59,18 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// Private baking bool for lemon
+        /// </summary>
+        private bool lemon = false;
+
+        /// <summary>
         /// If the water is served with lemons
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set { lemon = value; NotifyOfPropertyChange("Lemon"); }
+        } 
 
 
 

@@ -16,10 +16,10 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowpokeChili : Entree, INotifyPropertyChanged
     {
+      
         /// <summary>
-        /// Event Handler
+        /// private backing variable for cheese
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         private bool cheese = true;
         /// <summary>
@@ -28,7 +28,12 @@ namespace CowboyCafe.Data
         public bool Cheese
         {
             get { return cheese; }
-            set { cheese = value; }
+            set {
+                cheese = value;
+                NotifyOfPropertyChange("Cheese");
+                    
+               }
+
         }
 
         private bool sourCream = true;
@@ -38,7 +43,7 @@ namespace CowboyCafe.Data
         public bool SourCream
         {
             get { return sourCream; }
-            set { sourCream = value; }
+            set { sourCream = value; NotifyOfPropertyChange("SourCream"); }
         }
 
         private bool greenOnions = true;
@@ -48,7 +53,7 @@ namespace CowboyCafe.Data
         public bool GreenOnions
         {
             get { return greenOnions; }
-            set { greenOnions = value; }
+            set { greenOnions = value; NotifyOfPropertyChange("Greeneese"); }
         }
 
         private bool tortillaStrips = true;
@@ -58,7 +63,7 @@ namespace CowboyCafe.Data
         public bool TortillaStrips
         {
             get { return tortillaStrips; }
-            set { tortillaStrips = value; }
+            set { tortillaStrips = value; NotifyOfPropertyChange("tortillaStrips"); }
         }
 
         /// <summary>
@@ -109,6 +114,8 @@ namespace CowboyCafe.Data
             return "Cowpoke Chili";
                 
         }
+
+     
     }
 }
 
