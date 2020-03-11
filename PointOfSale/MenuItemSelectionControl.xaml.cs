@@ -157,9 +157,14 @@ namespace PointOfSale
         public void OnAddDakotaDoubleClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
-
             if (DataContext is Order data)
-            data.Add(new DakotaDoubleBurger());
+            {
+                var entree = new DakotaDoubleBurger();
+                var screen = new CustomizeDakotaDouble();
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
         /// <summary>
@@ -170,9 +175,14 @@ namespace PointOfSale
         public void OnAddTexasTripleBurgerClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
-
             if (DataContext is Order data)
-           data.Add(new TexasTripleBurger());
+            {
+                var entree = new TexasTripleBurger();
+                var screen = new CustomizeTexasTriple();
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
         /// <summary>
@@ -183,9 +193,14 @@ namespace PointOfSale
         public void OnAddAngryChickenClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data)
+            {
+                var entree = new AngryChicken();
+                var screen = new CustomizeAngryChicken();
 
-            if (DataContext is Order data )
-            data.Add(new AngryChicken());
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
         /// <summary>
@@ -196,9 +211,14 @@ namespace PointOfSale
         public void OnAddWaterClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
-
             if (DataContext is Order data)
-           data.Add(new Water());
+            {
+                var entree = new TrailBurger();
+                var screen = new Customize();
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
         /// <summary>
