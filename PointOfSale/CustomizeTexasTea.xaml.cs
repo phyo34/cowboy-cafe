@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: This class repsents the customization for the Texas Tea
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;

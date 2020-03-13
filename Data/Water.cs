@@ -7,13 +7,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class representing water 
     /// </summary>
-    public class Water : Drink
+    public class Water : Drink, INotifyPropertyChanged
     {
 
         /// <summary>
@@ -58,8 +59,24 @@ namespace CowboyCafe.Data
             }
         }
 
+
         /// <summary>
-        /// Private baking bool for lemon
+        /// Private backing bool for ice
+        /// </summary>
+        private bool ice = true;
+
+
+        /// <summary>
+        /// If the water is served with lemons
+        /// </summary>
+        public bool Ice
+        {
+            get { return ice; }
+            set { ice = value; NotifyOfPropertyChange("Ice"); }
+        }
+
+        /// <summary>
+        /// Private backing bool for lemon
         /// </summary>
         private bool lemon = false;
 

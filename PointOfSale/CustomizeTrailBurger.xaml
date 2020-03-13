@@ -16,6 +16,7 @@
                 <CheckBox IsChecked="{Binding Path=Mustard}">Mustard</CheckBox>
                 <CheckBox IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
                 <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
+              
             </StackPanel>
 
 

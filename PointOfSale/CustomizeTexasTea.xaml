@@ -11,9 +11,9 @@
             <TextBlock FontSize="30" Text="Customize the Texas Tea!"/>
             <StackPanel Orientation="Horizontal">
 
-                <CheckBox IsChecked="{Binding Path=Bread}">Sweet</CheckBox>
-                <CheckBox IsChecked="{Binding Path=Pickle}">Lemon</CheckBox>
-                <CheckBox IsChecked="{Binding Path=Pickle}">Tea</CheckBox>
+                <CheckBox IsChecked="{Binding Path=Sweet}">Sweet</CheckBox>
+                <CheckBox IsChecked="{Binding Path=Lemon}">Lemon</CheckBox>
+                <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
 
 
             </StackPanel>

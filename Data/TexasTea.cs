@@ -6,13 +6,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class representing the Texas Tea
     /// </summary>
-    public class TexasTea : Drink
+    public class TexasTea : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// The price of the Texas Tea
@@ -75,6 +76,20 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        ///// Private backing variable for ICe
+        ///// </summary>
+
+        //private bool ice = false;
+        ///// <summary>
+        ///// If the tea is served with ice
+        ///// </summary>
+        //public bool Ice
+        //{
+        //    get { return ice; }
+        //    set { ice = value; NotifyOfPropertyChange("Ice"); }
+        //}
 
         /// <summary>
         /// Private backing variable for lemons

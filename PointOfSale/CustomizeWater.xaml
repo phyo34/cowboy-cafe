@@ -11,8 +11,8 @@
             <TextBlock FontSize="30" Text="Customize Water!"/>
             <StackPanel Orientation="Horizontal">
 
-                <CheckBox IsChecked="{Binding Path=Bread}">Lemon</CheckBox>
-                <CheckBox IsChecked="{Binding Path=Pickle}">Ice</CheckBox>
+                <CheckBox IsChecked="{Binding Path=Lemon}">Lemon</CheckBox>
+                <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
 
             </StackPanel>
 

@@ -178,7 +178,7 @@ namespace PointOfSale
             if (DataContext is Order data)
             {
                 var entree = new TexasTripleBurger();
-                var screen = new CustomizeTexasTriple();
+                var screen = new CustomizeTexasTripleBurger();
 
                 AddItemAndOpenCustomizationScreen(entree, screen);
 
@@ -327,25 +327,7 @@ namespace PointOfSale
             data.Add(new BakedBeans());
         }
 
-        //public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
-        //{
-        //    var orderControl = this.FindAncestor<OrderControl>();
-        //    if (DataContext is Order order)
-        //    {
-        //        if (sender is Button button)
-        //        {
-        //            switch (button.Tag)
-        //            {
-        //                case "CowpokeChili":
-        //                    order.Add(new CowpokeChili());
-        //                    orderControl.SwapScreen(new CustomizeCowPokeChili());
-        //                    break;
-
-
-        //            }
-        //        }
-        //    }
-        //}
+    
 
 
 

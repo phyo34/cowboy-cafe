@@ -97,7 +97,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Private backing variable for buns
         /// </summary>
-        private bool bun;
+        private bool bun = true;
         /// <summary>
         /// If the Trail Burger should be served with bun 
         /// </summary>

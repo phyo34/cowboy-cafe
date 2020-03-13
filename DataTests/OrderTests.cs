@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: Creates the order tests
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using CowboyCafe.Data;

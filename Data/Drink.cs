@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: Creates the abstract class for drinks
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
