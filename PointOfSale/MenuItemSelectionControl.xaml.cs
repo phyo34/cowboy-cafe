@@ -213,8 +213,8 @@ namespace PointOfSale
             var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order data)
             {
-                var entree = new TrailBurger();
-                var screen = new Customize();
+                var entree = new Water();
+                var screen = new CustomizeWater();
 
                 AddItemAndOpenCustomizationScreen(entree, screen);
 
@@ -229,9 +229,14 @@ namespace PointOfSale
         public void OnAddJerkedSodaClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
-
             if (DataContext is Order data)
-           data.Add(new JerkedSoda());
+            {
+                var entree = new JerkedSoda();
+                var screen = new CustomizeJerkedSoda();
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
         /// <summary>
@@ -242,9 +247,14 @@ namespace PointOfSale
         public void OnAddCowboyCoffeeClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
-
             if (DataContext is Order data)
-            data.Add(new CowboyCoffee());
+            {
+                var entree = new CowboyCoffee();
+                var screen = new CustomizeCowboyCoffee();
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
         /// <summary>
@@ -255,9 +265,14 @@ namespace PointOfSale
         public void OnAddTexasTeaClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
-
             if (DataContext is Order data)
-            data.Add(new TexasTea());
+            {
+                var entree = new TexasTea();
+                var screen = new CustomizeTexasTea();
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
         /// <summary>

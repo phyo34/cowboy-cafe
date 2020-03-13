@@ -7,13 +7,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class representing the Texas Triple Burger entree
     /// </summary>
-    public class TexasTripleBurger : Entree
+    public class TexasTripleBurger : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// The price of the Texas Tiple Burger 
@@ -36,56 +37,140 @@ namespace CowboyCafe.Data
                 return 698;
             }
         }
+       
+        /// <summary>
+        /// Private variable for kethchup
+        /// </summary>
+        private bool ketchup = true;
 
         /// <summary>
         /// If the Texas Triple Burger should be served with ketchup 
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup { 
+            get { return ketchup; }
+            set { ketchup = value; NotifyOfPropertyChange("Pickle"); }
+        }
+
+
+        /// <summary>
+        /// Private variable for mustad 
+        /// </summary>
+        private bool mustard = true;
 
         /// <summary>
         /// If the Texas Triple Burger should be served with Mustard
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard {
+            get { return mustard; }
+            set { mustard = value; NotifyOfPropertyChange("Pickle"); }
+        }
 
+
+        /// <summary>
+        /// Private bool for pickle
+        /// </summary>
+        private bool pickle = true;
         /// <summary>
         /// If the Texas Triple Burger should be served with pickles 
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle {
+            get { return pickle; }
+            set { pickle = value; NotifyOfPropertyChange("Pickle"); }
+        }
 
+        /// <summary>
+        /// Private bool for cheese
+        /// </summary>
+
+        private bool cheese = true;
         /// <summary>
         /// If the Texas Triple Burger should be served with cheese 
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese {
+            get { return cheese; }
+            set { cheese = value; NotifyOfPropertyChange("Cheese"); }
+        } 
+
+
+        /// <summary>
+        /// private bool for buns 
+        /// </summary>
+        private bool bun = true;
 
         /// <summary>
         /// If the Texas Triple Burger should be served with buns
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun {
+            get { return bun; }
+            set { bun = value; NotifyOfPropertyChange("Bun"); }
+        }
+
+        /// <summary>
+        /// Private bool for tomato 
+        /// </summary>
+        private bool tomato = true; 
 
         /// <summary>
         /// If the Texas Triple Burger should have Tomato 
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato {
+            get { return tomato; }
+            set { tomato = value; NotifyOfPropertyChange("Tomato"); }
+        } 
+
+        /// <summary>
+        /// private bool for lettuce 
+        /// </summary>
+
+        private bool lettuce = true; 
 
         /// <summary>
         /// If the Texas Triple Burger should have Lettuce  
         /// </summary>
-        public bool Lettuce { get; set; } = true;
+        public bool Lettuce {
+            get { return lettuce; }
+            set { lettuce = value; NotifyOfPropertyChange("Lettuce"); }
+        } 
+
+        /// <summary>
+        /// Private bool for mayo 
+        /// </summary>
+
+        private bool mayo = true; 
 
         /// <summary>
         /// If the Texas Triple Burger should have Mayo 
         /// </summary>
-        public bool Mayo { get; set; } = true;
+        public bool Mayo {
+            get { return mayo; }
+            set { mayo = value; NotifyOfPropertyChange("Pickle"); }
+        } 
+       
+        /// <summary>
+        /// Private bool for bacon 
+        /// </summary>
+
+        private bool bacon = true;
 
         /// <summary>
         /// If the Texas Triple burger should have bacon 
         /// </summary>
-        public bool Bacon { get; set; } = true;
+        public bool Bacon {
+            get { return bacon; }
+            set { bacon = value; NotifyOfPropertyChange("Bacon"); }
+        } 
 
+        /// <summary>
+        /// Private bool for egg 
+        /// </summary>
+        private bool egg = true;
         /// <summary>
         /// If the Texas Triple burger should have egg 
         /// </summary>
-        public bool Egg { get; set; } = true;
+        public bool Egg {
+            get { return egg; }
+            set { egg = value; NotifyOfPropertyChange("Egg"); }
+        } 
 
         /// <summary>
         /// Provides special instructions for the Texas Triple Burger 
