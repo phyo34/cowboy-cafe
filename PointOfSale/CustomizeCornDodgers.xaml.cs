@@ -1,10 +1,4 @@
-﻿/*
-* Author: May Phyo
-* Class: CIS 400 A
-* Purpose: This class repsents the customization for the Jerked Soda
-*/
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -16,16 +10,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CowboyCafe.Data;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizeJerkedSoda.xaml
+    /// Interaction logic for CustomizeCornDodgers.xaml
     /// </summary>
-    public partial class CustomizeJerkedSoda : UserControl 
+    public partial class CustomizeCornDodgers : UserControl
     {
-        public CustomizeJerkedSoda()
+        public CustomizeCornDodgers()
         {
             InitializeComponent();
         }

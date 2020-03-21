@@ -20,12 +20,22 @@ namespace CowboyCafe.Data
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private Size size;
+
         /// <summary>
         ///     The size of the drink
         /// </summary>
 
-        public Size Size { get; set; } = Size.Small; 
-
+        public Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
         /// <summary>
         /// The price of the drink
         /// </summary>

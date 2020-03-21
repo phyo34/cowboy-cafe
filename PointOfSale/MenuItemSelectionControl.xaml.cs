@@ -283,9 +283,14 @@ namespace PointOfSale
         public void OnAddChiliCheeseFriesClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
-
             if (DataContext is Order data)
-            data.Add(new ChiliCheeseFries());
+            {
+                var entree = new ChiliCheeseFries();
+                var screen = new CustomizeChiliCheeseFries();
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
 
@@ -296,8 +301,15 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         public void OnAddCornDodgersClicked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order data)
-           data.Add(new CornDodgers());
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data)
+            {
+                var entree = new CornDodgers();
+                var screen = new CustomizeCornDodgers();
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
 
@@ -309,9 +321,14 @@ namespace PointOfSale
         void OnAddPanDeCampoClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
-
             if (DataContext is Order data)
-          data.Add(new PanDeCampo());
+            {
+                var entree = new PanDeCampo();
+                var screen = new CustomizePandeCampo();
+
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
         /// <summary>
@@ -322,9 +339,14 @@ namespace PointOfSale
         public void OnAddBakedBeansClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data)
+            {
+                var entree = new BakedBeans();
+                var screen = new CustomizeBakedBeans();
 
-            if (DataContext is Order data )
-            data.Add(new BakedBeans());
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
         }
 
     

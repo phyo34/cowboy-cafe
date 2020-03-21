@@ -9,7 +9,7 @@
     <Grid HorizontalAlignment="Center" Width="1138">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="600"/>
-            <ColumnDefinition />
+            <ColumnDefinition Width="400"/>
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -20,9 +20,9 @@
 
             <local:MenuItemSelectionControl Grid.Column="0" Grid.Row="1" Margin="-10,10,0,0" HorizontalAlignment="Left" Width="643" Height="565" VerticalAlignment="Top"/>
         </Border>
-        <local:OrderSummaryControl Grid.Row="1" Margin="44,10,0,0" HorizontalAlignment="Left" Width="248" Grid.Column="1" Height="390" VerticalAlignment="Top"/>
+        <local:OrderSummaryControl Grid.Row="1" Margin="35,7,0,0" HorizontalAlignment="Left" Width="279" Grid.Column="1" Height="390" VerticalAlignment="Top"/>
         <Button  Grid.Column="0" Background="Blue" Foreground="White" Margin="350,0,46,0" Click="CancelOrder" >Cancel Order</Button>
-        <Button Grid.Column="1" Background="Blue" Foreground="White" HorizontalContentAlignment="Center" Margin="0,0,246,0" Click="CompleteOrder">Complete Order</Button>
+        <Button Grid.Column="1" Background="Blue" Foreground="White" HorizontalContentAlignment="Center" Margin="0,0,170,0" Click="CompleteOrder">Complete Order</Button>
         <Button Grid.Column="0" Background="Blue" Foreground="White" Margin="0,0,376,0" Click="ItemSelection">Item Selection</Button>
 
 

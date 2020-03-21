@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.CustomizeWater"
+﻿<UserControl x:Class="PointOfSale.CustomizeChiliCheeseFries"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -19,18 +19,10 @@
 
     </UserControl.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+
         <StackPanel>
-            <TextBlock FontSize="30" Text="Customize Water!"/>
-            <StackPanel Orientation="Horizontal">
+            <TextBlock FontSize="30" Text="Customize the Pan de Campo!"/>
 
-                <CheckBox IsChecked="{Binding Path=Lemon}">Lemon</CheckBox>
-                <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
-
-            </StackPanel>
             <StackPanel Width="300" Grid.Row="1" HorizontalAlignment="Left">
                 <TextBlock>Choose the Size:</TextBlock>
                 <ListBox Name="myComboBox"
@@ -41,4 +33,5 @@
 
         </StackPanel>
     </Grid>
+
 </UserControl>
