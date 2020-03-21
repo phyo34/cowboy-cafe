@@ -77,19 +77,19 @@ namespace CowboyCafe.Data
             }
         }
 
-        /// <summary>
-        ///// Private backing variable for ICe
-        ///// </summary>
+        ///<summary>
+        /// Private backing variable for ICe
+        /// </summary>
 
-        //private bool ice = false;
-        ///// <summary>
-        ///// If the tea is served with ice
-        ///// </summary>
-        //public bool Ice
-        //{
-        //    get { return ice; }
-        //    set { ice = value; NotifyOfPropertyChange("Ice"); }
-        //}
+        private bool ice = true;
+        /// <summary>
+        /// If the tea is served with ice
+        /// </summary>
+        public bool Ice
+        {
+            get { return ice; }
+            set { ice = value; NotifyOfPropertyChange("Ice"); }
+        }
 
         /// <summary>
         /// Private backing variable for lemons

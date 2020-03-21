@@ -282,15 +282,15 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         public void OnAddChiliCheeseFriesClicked(object sender, RoutedEventArgs e)
         {
-            //var orderControl = this.FindAncestor<OrderControl>();
-            //if (DataContext is Order data)
-            //{
-            //    var entree = new ChiliCheeseFries();
-            //    var screen = new CustomizeChiliCheeseFries();
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data)
+            {
+                var entree = new ChiliCheeseFries();
+                var screen = new CustomizeChiliCheeseFries();
 
-            //    AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(entree, screen);
 
-            //}
+            }
         }
 
 
@@ -301,15 +301,15 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         public void OnAddCornDodgersClicked(object sender, RoutedEventArgs e)
         {
-            //var orderControl = this.FindAncestor<OrderControl>();
-            //if (DataContext is Order data)
-            //{
-            //    var entree = new CornDodgers();
-            //    var screen = new CustomizeCornDodgers();
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data)
+            {
+                var entree = new CornDodgers();
+                var screen = new CustomizeCornDodgers();
 
-            //    AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(entree, screen);
 
-            //}
+            }
         }
 
 
@@ -320,15 +320,15 @@ namespace PointOfSale
         /// <param name="e">The event </param>
         void OnAddPanDeCampoClicked(object sender, RoutedEventArgs e)
         {
-            //var orderControl = this.FindAncestor<OrderControl>();
-            //if (DataContext is Order data)
-            //{
-            //    var entree = new PanDeCampo();
-            //    var screen = new CustomizePandeCampo();
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data)
+            {
+                var entree = new PanDeCampo();
+                var screen = new CustomizePanDeCampo();
 
-            //    AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(entree, screen);
 
-            //}
+            }
         }
 
         /// <summary>
@@ -339,14 +339,14 @@ namespace PointOfSale
         public void OnAddBakedBeansClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
-            //if (DataContext is Order data)
-            //{
-            //    var entree = new BakedBeans();
-            //    var screen = new CustomizeBakedBeans();
+            if (DataContext is Order data)
+            {
+                var entree = new BakedBeans();
+                var screen = new CustomizeBakedBeans();
 
-            //    AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(entree, screen);
 
-            //}
+            }
         }
 
     

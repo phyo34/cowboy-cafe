@@ -1,10 +1,8 @@
 ﻿/*
 * Author: May Phyo
 * Class: CIS 400 A
-* Purpose: This class represents the customization for the Angry Chicken
+* Purpose: This class represents the customization for the Pan De Campo
 */
-
-
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,11 +19,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizeAngryChicken.xaml
+    /// Interaction logic for CustomizePanDeCampo.xaml
     /// </summary>
-    public partial class CustomizeAngryChicken : UserControl
+    public partial class CustomizePanDeCampo : UserControl
     {
-        public CustomizeAngryChicken()
+        public CustomizePanDeCampo()
         {
             InitializeComponent();
         }

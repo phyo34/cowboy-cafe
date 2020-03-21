@@ -1,7 +1,7 @@
 ﻿/*
 * Author: May Phyo
 * Class: CIS 400 A
-* Purpose: This class repsents the customization for water
+* Purpose: This class represents the customization for water
 */
 
 using System;

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: May Phyo
+* Class: CIS 400 A
+* Purpose: This class represents the customization for the Chili Cheese Fries
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
