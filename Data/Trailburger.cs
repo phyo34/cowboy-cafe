@@ -7,14 +7,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.ComponentModel; 
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class representing the trail burger entree
     /// </summary>
-    public class TrailBurger : Entree, INotifyPropertyChanged
+    public class TrailBurger : Entree
     {
         /// <summary>
         /// The price of the Trailburger

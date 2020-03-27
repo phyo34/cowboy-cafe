@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.ComponentModel;
 
 
 namespace CowboyCafe.Data
@@ -16,7 +15,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class representing the dakota burger entree
     /// </summary>
-   public  class DakotaDoubleBurger : Entree, INotifyPropertyChanged
+   public  class DakotaDoubleBurger : Entree
     {
 
         /// <summary>

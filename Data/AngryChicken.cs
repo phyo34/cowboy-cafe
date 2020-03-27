@@ -8,14 +8,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Public class representing the Angry Chicken entree
     /// </summary>
-    public class AngryChicken : Entree,INotifyPropertyChanged
+    public class AngryChicken : Entree
     {
         /// <summary>
         /// The price of the Angry Chicken 

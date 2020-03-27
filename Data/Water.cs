@@ -7,14 +7,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class representing water 
     /// </summary>
-    public class Water : Drink, INotifyPropertyChanged
+    public class Water : Drink
     {
 
         /// <summary>

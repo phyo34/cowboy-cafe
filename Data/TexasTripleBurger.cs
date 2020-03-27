@@ -7,14 +7,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class representing the Texas Triple Burger entree
     /// </summary>
-    public class TexasTripleBurger : Entree, INotifyPropertyChanged
+    public class TexasTripleBurger : Entree
     {
         /// <summary>
         /// The price of the Texas Tiple Burger 

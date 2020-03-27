@@ -8,14 +8,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class representing the Pecos Pulled Pork entree
     /// </summary>
-    public class PecosPulledPork : Entree, INotifyPropertyChanged
+    public class PecosPulledPork : Entree
     {
        
             /// <summary>
