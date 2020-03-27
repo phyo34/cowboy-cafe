@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
-             mc:Ignorable="d" d:DesignWidth="260" Height="370">
+             mc:Ignorable="d" Height="370" Width="225">
     <UserControl.Resources>
         <Style TargetType="ListBoxItem">
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -26,17 +26,18 @@
 
             </Grid>
 
-            <ListBox ItemsSource="{Binding Path=Items}" Height="225"  Width="254">
+            <ListBox Name="OrderItems" SelectionChanged="OnSelectionChanged" ItemsSource="{Binding Path=Items}" Height="225"  Width="301">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                          
+
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row ="0" Text="{Binding}"/>
-                            <TextBlock HorizontalAlignment="Right"   Grid.Row="0" Text="{Binding Path = Price }"/>
+                            <TextBlock HorizontalAlignment="Center"   Grid.Row="0" Text="{Binding Path = Price }"/>
+                            <Button HorizontalAlignment="Right" Grid.Row="0"  Background="Red" Foreground="White" Click="RemoveItem" Content="X"/>
 
                             <ListView ItemsSource="{Binding Path=SpecialInstructions}"  Grid.Row="1"></ListView>
 

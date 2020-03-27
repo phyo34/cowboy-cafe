@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using Extensions;
 
 namespace PointOfSale
 {
@@ -24,7 +25,23 @@ namespace PointOfSale
     /// Interaction logic for OrderSummaryControl.xaml
     /// </summary>
     public partial class OrderSummaryControl : UserControl
+
     {
+
+        /// <summary>
+        /// Private ordercontro
+        /// </summary>
+        private OrderControl order;
+
+
+
+
+        //Create switch screen 
+        //In xmal for list box do selectionchanged == the switch screen 
+        //switch screen -- is an event -- check in list box if u have iorderitem -- create 
+        //Do if statements.. check if sender is istbox,...check what iorder item is ... 4 lines of code.. make new screen..set scren datacontext to that item 
+        //Have private order contorl in summary order control 
+        //that is where you'll have 
         public OrderSummaryControl()
         {
             InitializeComponent();
@@ -32,6 +49,141 @@ namespace PointOfSale
 
         }
 
-       
+        /// <summary>
+        /// Handles manual selection of items in the list.
+        /// </summary>
+        /// <param name="sender">SelectionChanged</param>
+        /// <param name="args">the args</param>
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
+        {
+            if (sender is ListBox list)
+            {
+                if (list.SelectedItem is IOrderItem OrderItem)
+                {
+                    if (OrderItem is AngryChicken chicken)
+                    {                       
+                        var screen = new CustomizeAngryChicken();
+                        screen.DataContext = chicken;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is CowpokeChili chili)
+                    {
+                        var screen = new CustomizeCowPokeChili();
+                        screen.DataContext = chili;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is PecosPulledPork pork)
+                    {
+                        var screen = new CustomizePecosPulledPork();
+                        screen.DataContext = pork;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is TrailBurger trailBurger)
+                    {
+                        var screen = new CustomizeTrailBurger();
+                        screen.DataContext = trailBurger;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is DakotaDoubleBurger dakotaDouble)
+                    {
+                        var screen = new CustomizeDakotaDouble();
+                        screen.DataContext = dakotaDouble;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is TexasTripleBurger texasTriple)
+                    {
+                        var screen = new CustomizeTexasTripleBurger();
+                        screen.DataContext = texasTriple;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is ChiliCheeseFries chiliCheeseFries)
+                    {
+                        var screen = new CustomizeChiliCheeseFries();
+                        screen.DataContext = chiliCheeseFries;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is CornDodgers cornDodgers)
+                    {
+                        var screen = new CustomizeCornDodgers();
+                        screen.DataContext = cornDodgers;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is PanDeCampo panDeCampo)
+                    {
+                        var screen = new CustomizePanDeCampo();
+                        screen.DataContext = panDeCampo;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is BakedBeans bakedBeans)
+                    {
+                        var screen = new CustomizeBakedBeans();
+                        screen.DataContext = bakedBeans;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is JerkedSoda jerkedSoda)
+                    {
+                        var screen = new CustomizeJerkedSoda();
+                        screen.DataContext = jerkedSoda;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is TexasTea texasTea)
+                    {
+                        var screen = new CustomizeTexasTea();
+                        screen.DataContext = texasTea;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is CowboyCoffee coffee)
+                    {
+                        var screen = new CustomizeCowboyCoffee();
+                        screen.DataContext = coffee;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                    if (OrderItem is Water water)
+                    {
+                        var screen = new CustomizeWater();
+                        screen.DataContext = water;
+                        order = this.FindAncestor<OrderControl>();
+                        order.SwapScreen(screen);
+                    }
+                }
+               
+            }
+           
+
+        }
+
+        /// <summary>
+        /// Removes an item from the list.
+        /// </summary>
+        /// <param name="sender">click event</param>
+        /// <param name="args">the args</param>
+        private void RemoveItem(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (sender is FrameworkElement element)
+                {
+                    if (element.DataContext is IOrderItem item)
+                    {
+                        order.Remove(item);
+                    }
+                }
+            }
+        }
+
+
     }
 }
