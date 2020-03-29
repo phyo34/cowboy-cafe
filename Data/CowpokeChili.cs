@@ -52,7 +52,7 @@ namespace CowboyCafe.Data
         public bool GreenOnions
         {
             get { return greenOnions; }
-            set { greenOnions = value; NotifyOfPropertyChange("Greeneese"); }
+            set { greenOnions = value; NotifyOfPropertyChange("GreenOnions"); }
         }
 
         private bool tortillaStrips = true;
