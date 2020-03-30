@@ -24,11 +24,21 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel>
-            <TextBlock FontSize="30" Text="Customize Water!"/>
-            <StackPanel Orientation="Horizontal">
+            <TextBlock FontSize="35" Text="Customize Water!"/>
+            <StackPanel Orientation="Vertical">
 
-                <CheckBox IsChecked="{Binding Path=Lemon}">Lemon</CheckBox>
-                <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
+                <CheckBox IsChecked="{Binding Path=Lemon}" Content="Lemon">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="3" ScaleY="3" />
+
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox IsChecked="{Binding Path=Ice}" Content="Ice">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="3" ScaleY="3" />
+
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
 
             </StackPanel>
             <StackPanel Width="300" Grid.Row="1" HorizontalAlignment="Left">

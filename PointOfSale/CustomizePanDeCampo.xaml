@@ -20,7 +20,7 @@
     </UserControl.Resources>
     <Grid>
         <StackPanel>
-            <TextBlock FontSize="30" Text="Customize the Pan de Campo!"/>
+            <TextBlock FontSize="35" Text="Customize the Pan de Campo!"/>
 
             <StackPanel Width="300" Grid.Row="1" HorizontalAlignment="Left">
                 <TextBlock>Choose the Size:</TextBlock>

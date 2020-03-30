@@ -192,7 +192,7 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
             var texasTriple = new TexasTripleBurger();
             Assert.PropertyChanged(texasTriple, "SpecialInstructions", () =>
             {
-                texasTriple.Lettuce = false;
+                texasTriple.Lettuce = true;
             });
 
         }

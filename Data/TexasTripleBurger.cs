@@ -47,7 +47,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Ketchup { 
             get { return ketchup; }
-            set { ketchup = value; NotifyOfPropertyChange("Pickle"); }
+            set { ketchup = value; NotifyOfPropertyChange("Ketchup"); }
         }
 
 
@@ -61,7 +61,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Mustard {
             get { return mustard; }
-            set { mustard = value; NotifyOfPropertyChange("Pickle"); }
+            set { mustard = value; NotifyOfPropertyChange("Mustard"); }
         }
 
 
@@ -142,7 +142,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Mayo {
             get { return mayo; }
-            set { mayo = value; NotifyOfPropertyChange("Pickle"); }
+            set { mayo = value; NotifyOfPropertyChange("Mayo"); }
         } 
        
         /// <summary>

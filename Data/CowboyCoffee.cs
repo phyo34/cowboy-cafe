@@ -81,7 +81,7 @@ namespace CowboyCafe.Data
         public bool RoomForCream
         {
             get { return roomforcream; }
-            set { roomforcream = value; NotifyOfPropertyChange("Room for Cream"); }
+            set { roomforcream = value; NotifyOfPropertyChange("RoomForCream"); }
         } 
 
 

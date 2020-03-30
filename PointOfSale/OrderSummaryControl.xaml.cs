@@ -34,14 +34,6 @@ namespace PointOfSale
         private OrderControl order;
 
 
-
-
-        //Create switch screen 
-        //In xmal for list box do selectionchanged == the switch screen 
-        //switch screen -- is an event -- check in list box if u have iorderitem -- create 
-        //Do if statements.. check if sender is istbox,...check what iorder item is ... 4 lines of code.. make new screen..set scren datacontext to that item 
-        //Have private order contorl in summary order control 
-        //that is where you'll have 
         public OrderSummaryControl()
         {
             InitializeComponent();

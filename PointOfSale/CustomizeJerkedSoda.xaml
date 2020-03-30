@@ -32,7 +32,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel>
-            <TextBlock FontSize="30" Text="Customize the Jerked Soda!"/>
+            <TextBlock FontSize="35" Text="Customize the Jerked Soda!"/>
             <StackPanel Width="300">
             <TextBlock>Choose the Size:</TextBlock>
             <ListBox Name="myComboBox"
@@ -45,6 +45,13 @@
                ItemsSource="{Binding Source={StaticResource SodaFlavorEnum}}"
                 SelectedItem="{Binding Path= Flavor}"     />
         </StackPanel>
+            <CheckBox IsChecked="{Binding Path=Ice}" Content="Ice">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+
         </StackPanel>
     </Grid>
 </UserControl>

@@ -7,13 +7,33 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <TextBlock FontSize="30" Text="Customize Cowpoke Chili!"/>
-        <StackPanel Orientation="Horizontal">
-           
-            <CheckBox IsChecked="{Binding Path=GreenOnions}">Green Onions</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox> 
-            <CheckBox IsChecked="{Binding Path=SourCream}">SourCream</CheckBox>
-            <CheckBox IsChecked="{Binding Path=TortillaStrips}">TortillaChips</CheckBox>
+        <TextBlock FontSize="35" Text="Customize Cowpoke Chili!"/>
+        <StackPanel Orientation="Vertical">
+
+            <CheckBox IsChecked="{Binding Path=GreenOnions}" Content="Green Onions" >
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Cheese}" Content="Cheese">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=SourCream}" Content="SourCream">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=TortillaStrips}" Content="Tortilla Strips">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+
+                </CheckBox.LayoutTransform>
+            </CheckBox>
         </StackPanel>
        
 

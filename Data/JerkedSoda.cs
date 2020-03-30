@@ -72,7 +72,20 @@ namespace CowboyCafe.Data
             set { flavor = value; NotifyOfPropertyChange("Flavor"); }
         }
 
- 
+
+        /// <summary>
+        /// Private backing variable for room for ice
+        /// </summary>
+        private bool ice = false;
+        /// <summary>
+        /// If the coffe should be served with Ice
+        /// </summary>
+        public override bool Ice
+        {
+            get { return ice; }
+            set { ice = value; NotifyOfPropertyChange("Ice"); }
+        }
+
 
         /// <summary>
         /// Provides special instructions for the jerked soda
