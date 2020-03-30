@@ -16,7 +16,7 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
 {
     public class TrailBurgerPropertyChangedTests
     {
-        //Test 1: Texas Triple should implement the INotifyPropertyChangedInterface
+        //Test 1: Trail Burger should implement the INotifyPropertyChangedInterface
         [Fact]
         public void TripleBurgerhouldImplementINotifyPropertyChanged()
         {

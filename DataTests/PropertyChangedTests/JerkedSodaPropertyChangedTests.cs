@@ -134,5 +134,33 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
             soda.Size = Size.Large;
             Assert.Equal<double>(198, soda.Calories);
         }
+
+        //Test 11: Changing Size to Small should change Size to Small
+        [Fact]
+        public void ChangingSizetoSmallShouldInvokePropertyChangeForSmallSize()
+        {
+            var soda = new JerkedSoda();
+            soda.Size = Size.Small;
+            Assert.Equal<Size>(Size.Small, soda.Size);
+        }
+
+        //Test 12: Changing Size to Medium should change Size to Medium
+        [Fact]
+        public void ChangingSizetoMediumShouldInvokePropertyChangeForMediumSize()
+        {
+            var soda = new JerkedSoda();
+            soda.Size = Size.Medium;
+            Assert.Equal<Size>(Size.Medium, soda.Size);
+        }
+
+        //Test 13: Changing Size to Large should change Size to Large
+        [Fact]
+        public void ChangingSizetoLargeShouldInvokePropertyChangeForLargeSize()
+        {
+            var soda = new JerkedSoda();
+            soda.Size = Size.Large;
+            Assert.Equal<Size>(Size.Large, soda.Size);
+        }
+
     }
 }
