@@ -32,7 +32,10 @@ namespace PointOfSale
           
             DataContext = new Order(); 
 
+
             }
+
+        public TransationControl screen = new TransationControl();
 
         /// <summary>
         /// Button that cancels order
@@ -40,8 +43,13 @@ namespace PointOfSale
         /// <param name="sender">The sender</param>
         /// <param name="e">The event</param>
         private void CancelOrder(object sender, RoutedEventArgs e)
+
         {
+            Container.Child = new MenuItemSelectionControl();
             DataContext = new Order();
+
+            Complete.Visibility = Visibility.Visible;
+            CompleteT.Visibility = Visibility.Hidden;
         }
 
         /// <summary>
@@ -51,11 +59,13 @@ namespace PointOfSale
         /// <param name="e">The event</param>
         private void CompleteOrder(object sender, RoutedEventArgs e)
         {
-            DataContext = new Order();
+            SwapScreen(screen);        
+            Complete.Visibility = Visibility.Hidden;
+            CompleteT.Visibility = Visibility.Visible;
 
         }
 
-      
+
 
         /// <summary>
         /// Changing what the border is containing to the new elemenet passes in
@@ -74,6 +84,17 @@ namespace PointOfSale
         private void ItemSelection(object sender, RoutedEventArgs e)
         {
             Container.Child = new MenuItemSelectionControl();
+        }
+
+        private void CompleteTransaction(object sender, RoutedEventArgs e)
+        {
+            Container.Child = new MenuItemSelectionControl();
+            DataContext = new Order();
+
+            CompleteT.Visibility = Visibility.Hidden;
+            Complete.Visibility = Visibility.Visible;
+
+
         }
     }
 }

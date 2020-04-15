@@ -31,6 +31,27 @@ namespace CowboyCafe.Data
 
 
         /// <summary>
+        /// Gets or sets the sales tax rate 
+        /// </summary>
+        public double SalesTaxRate { get;  set; } = 0.16;
+
+        /// <summary>
+        /// Calculates the cost of the sales tax on the order by multiplying the tax rate to the item 
+        /// </summary>
+        public double SalesTaxCost => Subtotal * SalesTaxRate;
+
+        /// <summary>
+        /// Calculates the total cost of the order by combining  the subtotal cost and the sales tax cost.
+        /// </summary>
+        public double TotalCost
+        {
+            get
+            {
+                return Subtotal + (Subtotal * .16);
+            }
+        }
+
+        /// <summary>
         /// Returns the subtotal of the items in the order list 
         /// </summary>
         public double Subtotal
@@ -53,6 +74,7 @@ namespace CowboyCafe.Data
         /// Returns the last order number incremented
         /// </summary>
         public uint OrderNumber { get { return lastOrderNumber++; } }
+
 
 
         /// <summary>

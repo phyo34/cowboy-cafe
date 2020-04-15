@@ -16,102 +16,34 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
 {
     public class CornDodgersPropertyChangedTests
     {
-        //Test 1: Corn Dodgers should implement the INotifyPropertyChangedInterface
         [Fact]
-        public void CornDodgersShouldImplementINotifyPropertyChanged()
+        public void CornDodgersImplementsINotifyPropertyChanged()
+        {
+            var cd = new CornDodgers();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(cd);
+        }
+        /// <summary>
+        /// Changing size should change price
+        /// </summary>
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
         {
             var cornDodgers = new CornDodgers();
-            Assert.IsAssignableFrom<INotifyPropertyChanged>(cornDodgers);
+            Assert.PropertyChanged(cornDodgers, "Price", () => {
+                cornDodgers.Size = Size.Large;
+            });
         }
 
-
-        //Test 2: Changing size to Small should change to price for  Small Corn Dodgers
-
+        /// <summary>
+        /// Changing size should change calories
+        /// </summary>
         [Fact]
-        public void ChangingSmallSizeShouldInvokePropertyChangedoForSmallCornDodgersrice()
+        public void ChangingSizePropertyShouldInvokeProperyChangedForCalories()
         {
             var cornDodgers = new CornDodgers();
-            cornDodgers.Size = Size.Small;
-            Assert.Equal<double>(1.59, cornDodgers.Price);
-        }
-
-        //Test 3: Changing size to Small should change to calories for Small Corn Dodgers
-
-
-        [Fact]
-        public void ChangingSmallSizeShouldInvokePropertyChangedoForSmallCornDodgersCalorie()
-        {
-            var cornDodgers = new CornDodgers();
-            cornDodgers.Size = Size.Small;
-            Assert.Equal<double>(512, cornDodgers.Calories);
-        }
-
-        //Test 4: Changing size to Medium should change to price for  Medium Corn Dodgers
-
-        [Fact]
-        public void ChangingMediumSizeShouldInvokePropertyChangedoForMediumCornDodgersPrice()
-        {
-            var cornDodgers = new CornDodgers();
-            cornDodgers.Size = Size.Medium;
-            Assert.Equal<double>(1.79, cornDodgers.Price);
-        }
-
-        //Test 5: Changing size to Medium should change to calories for Medium Corn Dodgers
-
-
-        [Fact]
-        public void ChangingMediumSizeShouldInvokePropertyChangedoForMediumCornDodgersCalorie()
-        {
-            var cornDodgers = new CornDodgers();
-            cornDodgers.Size = Size.Medium;
-            Assert.Equal<double>(685, cornDodgers.Calories);
-        }
-        //Test 6: Changing size to Large should change to price for  Large Corn Dodgers
-        [Fact]
-        public void ChangingLargeSizeShouldInvokePropertyChangedoForCornDodgersPrice()
-        {
-            var cornDodgers = new CornDodgers();
-            cornDodgers.Size = Size.Large;
-            Assert.Equal<double>(1.99, cornDodgers.Price);
-        }
-
-        //Test 7: Changing Size to Large should change to calories for Large Corn Dodgers
-
-
-        [Fact]
-        public void ChangingLargeSizeShouldInvokePropertyChangedoForLargeCornDodgersCalorie()
-        {
-            var cornDodgers = new CornDodgers();
-            cornDodgers.Size = Size.Large;
-            Assert.Equal<double>(717, cornDodgers.Calories);
-        }
-
-        //Test 14: Changing Size to Small should change Size to Small
-        [Fact]
-        public void ChangingSizetoSmallShouldInvokePropertyChangeForSmallSize()
-        {
-
-            var cornDodgers = new CornDodgers();
-            cornDodgers.Size = Size.Small;
-            Assert.Equal<Size>(Size.Small, cornDodgers.Size);
-        }
-
-        //Test 15: Changing Size to Medium should change Size to Medium
-        [Fact]
-        public void ChangingSizetoMediumShouldInvokePropertyChangeForMediumSize()
-        {
-            var cornDodgers = new CornDodgers();
-            cornDodgers.Size = Size.Medium;
-            Assert.Equal<Size>(Size.Medium, cornDodgers.Size);
-        }
-
-        //Test 16: Changing Size to Large should change Size to Large
-        [Fact]
-        public void ChangingSizetoLargeShouldInvokePropertyChangeForLargeSize()
-        {
-            var cornDodgers = new CornDodgers();
-            cornDodgers.Size = Size.Large;
-            Assert.Equal<Size>(Size.Large, cornDodgers.Size);
+            Assert.PropertyChanged(cornDodgers, "Calories", () => {
+                cornDodgers.Size = Size.Large;
+            });
         }
 
     }

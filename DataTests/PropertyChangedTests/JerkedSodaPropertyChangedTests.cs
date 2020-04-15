@@ -162,5 +162,30 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
             Assert.Equal<Size>(Size.Large, soda.Size);
         }
 
+
+        /// <summary>
+        /// Changing size should change price
+        /// </summary>
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
+        {
+            var jerkedSoda = new JerkedSoda();
+            Assert.PropertyChanged(jerkedSoda, "Price", () => {
+                jerkedSoda.Size = Size.Large;
+            });
+        }
+
+        /// <summary>
+        /// Changing size should change calories
+        /// </summary>
+        [Fact]
+        public void ChangingSizePropertyShouldInvokeProperyChangedForCalories()
+        {
+            var jerkedSoda = new JerkedSoda();
+            Assert.PropertyChanged(jerkedSoda, "Calories", () => {
+                jerkedSoda.Size = Size.Large;
+            });
+        }
+
     }
 }
