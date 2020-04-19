@@ -1,6 +1,7 @@
 ﻿/* Author: May Phyo
  * Class: Menu.cs 
- * Description: Allows the website to acess the menu*/
+ * Description: Allows the website to acess the menu
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;
