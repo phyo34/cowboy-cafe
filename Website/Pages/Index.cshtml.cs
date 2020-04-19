@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**
+ * Author: May Phyo
+ * Page represents the menu/home page
+ * 
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

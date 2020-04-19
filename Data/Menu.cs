@@ -10,13 +10,13 @@ namespace CowboyCafe.Data
     public static class Menu
     {
         /// <summary>
-        /// Changes size of drink
+        /// Will change the drink size
         /// </summary>
         /// <param name="d"></param>
         /// <param name="s"></param>
-        public static void SizeDrink(Drink d, Size s)
+        public static void DrinkSize(Drink drink, Size s)
         {
-            d.Size = s;
+            drink.Size = s;
         }
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace CowboyCafe.Data
         /// </summary>
         /// <param name="s"></param>
         /// <param name="size"></param>
-        public static void SizeSide(Side s, Size size)
+        public static void SideSize(Side side, Size size)
         {
-            s.Size = size;
+            side.Size = size;
         }
 
         /// <summary>
-        /// Data refactoring
+        /// List of menu items
         /// </summary>
         /// <returns></returns>
         public static IEnumerable<IOrderItem> OrderItems()
@@ -61,8 +61,7 @@ namespace CowboyCafe.Data
 
 
         /// <summary>
-        /// All the entrees
-        /// </summary>
+        /// Lists the entrees
         /// <returns></returns>
         public static IEnumerable<IOrderItem> Entrees()
         {
@@ -81,7 +80,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// All the drinks
+        /// List of drinks
         /// </summary>
         /// <returns></returns>
         public static IEnumerable<IOrderItem> Drinks()
@@ -97,7 +96,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// All the sides
+        /// List the sides
         /// </summary>
         /// <returns></returns>
         public static IEnumerable<IOrderItem> Sides()

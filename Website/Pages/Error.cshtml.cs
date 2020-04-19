@@ -1,3 +1,8 @@
+/**
+ * Author: May Phyo
+ * Page represents the error page
+ * 
+ */
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
