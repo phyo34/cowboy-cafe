@@ -48,7 +48,7 @@ namespace PointOfSale
             quant--;
             e.Handled = false;
             var cashPaymentControl = this.FindAncestor<CashControl>();
-            cashPaymentControl.Button_Click(sender, e);
+            cashPaymentControl.subtract(sender, e);
         }
 
         private void IncreaseBill_Click(object sender, RoutedEventArgs e)
@@ -56,7 +56,7 @@ namespace PointOfSale
             quant++;
             e.Handled = false;
             var cashPaymentControl = this.FindAncestor<CashControl>();
-            cashPaymentControl.Button_Click(sender, e);
+            cashPaymentControl.subtract(sender, e);
         }
     }
 }

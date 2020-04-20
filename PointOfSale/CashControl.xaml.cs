@@ -29,7 +29,7 @@ namespace PointOfSale
         }
 
 
-        private double TTotal;
+        private double total;
 
         /// <summary>
         /// Complete Order Click
@@ -38,7 +38,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CompleteOrderClick(object sender, RoutedEventArgs e)
         {
-            Button_Click(sender, e);
+            subtract(sender, e);
             var orderControl = this.FindAncestor<OrderControl>();
             var transactionControl = orderControl.screen;
             transactionControl.cashDrawer.AddBill(Bills.One, One.quant);
@@ -54,7 +54,7 @@ namespace PointOfSale
             transactionControl.cashDrawer.AddCoin(Coins.Quarter, Quarter.quant);
             transactionControl.cashDrawer.AddCoin(Coins.HalfDollar, HalfDollar.quant);
             transactionControl.cashDrawer.AddCoin(Coins.Dollar, Dollar.quant);
-            transactionControl?.CashPayment(TTotal, (orderControl.DataContext as Order).TotalCost);
+            transactionControl?.CashPayment(total, (orderControl.DataContext as Order).TotalCost);
             orderControl.DataContext = new Order();
             orderControl.Complete.IsEnabled = true;
             orderControl.Cancel.IsEnabled = true;
@@ -65,11 +65,11 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Button Click event for adding and subtracting
+        /// Event for adding and subtracting
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Button_Click(object sender, RoutedEventArgs e)
+        public void subtract(object sender, RoutedEventArgs e)
         {
             var one = One.quant;
             var two = Two.quant * 2;
@@ -85,10 +85,10 @@ namespace PointOfSale
             var halfDollar = HalfDollar.quant * .5;
             var dollar = Dollar.quant;
 
-            TTotal = one + two + five + ten + twenty + fifty + hundred + penny + dime + nickel + quarter + halfDollar + dollar;
-            Total.Text = TTotal.ToString();
+            total = one + two + five + ten + twenty + fifty + hundred + penny + dime + nickel + quarter + halfDollar + dollar;
+            Total.Text = total.ToString();
             var orderControl = this.FindAncestor<OrderControl>();
-            if (TTotal >= (orderControl?.DataContext as Order).TotalCost) CompleteOrder.IsEnabled = true;
+            if (total >= (orderControl?.DataContext as Order).TotalCost) CompleteOrder.IsEnabled = true;
         }
     }
 }
