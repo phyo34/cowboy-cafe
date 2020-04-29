@@ -5,52 +5,155 @@
     ViewData["Title"] = "Home page";
 }
 
+<center>
+    <img class="marginauto" src="~/images/cowboy.jpg" alt="centered image" width="1000" height="200" />
+</center>
 
-<div class="text-center row">
+<form id="Menu">
     <h1 class="display-4">Welcome To The Cowboy Cafe!</h1>
     <p>
         We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
         Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
         Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
         You’ve had a hard ride - so take it easy with us.
-    </p>
+    </p><br />
 
-    <div class="col">
-        <h2>All Entrees</h2>
-        @foreach (CowboyCafe.Data.Entree entree in CowboyCafe.Data.Menu.Entrees())
+    <div class="text-center row">
+        @if (Model.menuItems.Count() == 0)
         {
-            <div class="menu-item" style="border: solid">
-                <p>@entree<br /></p>
-                <p>Price: @string.Format("{0:C}", entree.Price)<br /></p>
-                <p>Calories: @entree.Calories<br /></p>
+            <h5 style="margin-left:20px">No items found.</h5>
+        }
+        else
+        {
+    <div class="col-sm">
+        <center>
+            <img class="marginauto" src="~/images/entree.png" alt="centered image" width="170" height="170" />
+        </center>
+        @foreach (IOrderItem item in @Model.menuItems)
+        {
+            <div class="menu-item">
+                @if (item is Entree)
+                {
+                    <span>@item<br /></span>
+                    <span>Price: @string.Format("{0:C}", item.Price)<br /></span>
+                    <span>Calories: @item.Calories<br /><br /></span>
+                    Model.Count++;
+                }
             </div>
+        }
+        @if (Model.Count == 0)
+        {
+            <h5>No Entrees Available.</h5>
+        }
+        else
+        {
+            Model.Count = 0;
         }
     </div>
 
-    <div class="col">
-        <h2>All Sides</h2>
-        @foreach (CowboyCafe.Data.Side side in CowboyCafe.Data.Menu.Sides())
+    <div class="col-sm">
+        <center>
+            <img class="marginauto" src="~/images/Sides.png" alt="centered image" width="200" height="200" />
+        </center>
+        @foreach (IOrderItem item in @Model.menuItems)
         {
-            <div class="menu-item" style="border: solid">
-                <p>@side<br /></p>
-                <p>Price: @string.Format("{0:C}", side.Price)<br /></p>
-                <p>Calories: @side.Calories<br /></p>
+            <div class="menu-item">
+                @if (item is Side)
+                {
+                    <span>@item<br /></span>
+                    <span>Price: @string.Format("{0:C}", item.Price)<br /></span>
+                    <span>Calories: @item.Calories<br /><br /></span>
+                    Model.Count++;
+                }
             </div>
+        }
+        @if (Model.Count == 0)
+        {
+            <h5>No Sides Available.</h5>
+        }
+        else
+        {
+            Model.Count = 0;
         }
     </div>
 
-
-
-    <div class="col">
-        <h2>All Drinks</h2>
-        @foreach (CowboyCafe.Data.Drink drink in CowboyCafe.Data.Menu.Drinks())
+    <div class="col-sm">
+        <center>
+            <img class="marginauto" src="~/images/drinks.png" alt="centered image" width="200" height="200" />
+        </center>
+        @foreach (IOrderItem item in @Model.menuItems)
         {
-            <div class="menu-item" style="border: solid">
-                <p>@drink<br /></p>
-                <p>Price: @string.Format("{0:C}", drink.Price)<br /></p>
-                <p>Calories: @drink.Calories<br /></p>
+            <div class="menu-item">
+                @if (item is Drink)
+                {
+                    <span>@item<br /></span>
+                    <span>Price: @string.Format("{0:C}", item.Price)<br /></span>
+                    <span>Calories: @item.Calories<br /><br /></span>
+                    Model.Count++;
+                }
+            </div>
+        }
+        @if (Model.Count == 0)
+        {
+            <h5>No Drinks Available.</h5>
+        }
+        else
+        {
+            Model.Count = 0;
+        }
+
+    </div>
+
+            <div class="col-md">
+                <div class="search-bar">
+                    <div>
+                        <div>
+                            <div style="padding:5px">
+                                <input type="text" name="search" value="@Model.search" />
+                                <input type="submit" value="Search">
+
+                                <br /><br />
+
+                                <h4>Type</h4>
+                                <label>
+                                    Entree:
+                                    <input type="checkbox" name="MenuCategory" value="Entree" checked="@Model.menuCategory.Contains("Entree")" />
+                                </label>
+                                <label>
+                                    Side:
+                                    <input type="checkbox" name="MenuCategory" value="Side" checked="@Model.menuCategory.Contains("Side")" />
+                                </label>
+                                <label>
+                                    Drink:
+                                    <input type="checkbox" name="MenuCategory" value="Drink" checked="@Model.menuCategory.Contains("Drink")" />
+                                </label>
+
+                                <br />
+
+                                <h4>Price (Range)</h4>
+                                <div>
+
+                                    <input name="MinimumPrice" type="number" min="0" max="10" step="0.1" placeholder="min" value="@Model.minimumPrice" />
+                                    -
+                                    <input name="MaximumPrice" type="number" min="0" max="10" step="0.1" placeholder="max" value="@Model.maximumPrice" />
+                                </div>
+
+                                <br />
+
+                                <h4>Calories (Range)</h4>
+                                <div>
+                                    <input name="MinimumCalories" type="number" min="0" max="1000" step="1" placeholder="min" value="@Model.minimumCalories" />
+                                    -
+                                    <input name="MaximumCalories" type="number" min="0" max="1000" step="1" placeholder="max" value="@Model.maximumCalories" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
         }
     </div>
-
-</div>
+    </div>
+</form>

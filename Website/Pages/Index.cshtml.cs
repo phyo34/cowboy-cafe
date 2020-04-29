@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using CowboyCafe.Data;
 
 namespace Website.Pages
 {
@@ -21,10 +22,72 @@ namespace Website.Pages
         {
             _logger = logger;
         }
+        /// <summary>
+        /// Enumerable list of menu items based on filter items
+        /// </summary>
+        public IEnumerable<IOrderItem> menuItems { get; protected set; }
 
-        public void OnGet()
+        /// <summary>
+        /// Search terms to filter out
+        /// </summary>
+        [BindProperty]
+        public string search { get; set; }
+
+        /// <summary>
+        /// Categories of items selected
+        /// </summary>
+        [BindProperty]
+        public string[] menuCategory { get; set; }
+
+        /// <summary>
+        /// Minimum price inputed
+        /// </summary>
+        [BindProperty]
+        public double? minimumPrice { get; set; }
+
+        /// <summary>
+        /// Maximum price inputed
+        /// </summary>
+        [BindProperty]
+        public double? maximumPrice { get; set; }
+
+        /// <summary>
+        /// Minimum calories selected
+        /// </summary>
+        [BindProperty]
+        public int? minimumCalories { get; set; }
+
+        /// <summary>
+        /// Maximum calories selected
+        /// </summary>
+        [BindProperty]
+        public int? maximumCalories { get; set; }
+
+        /// <summary>
+        /// Count for determining items in each column
+        /// </summary>
+        [BindProperty]
+        public int Count { get; set; } = 0;
+
+        /// <summary>
+        /// Filter menu
+        /// </summary>
+        /// <param name="MinimumPrice">Minimium Price inputed in box</param>
+        /// <param name="MaximumPrice">Maximum Price inputed in box</param>
+        /// <param name="MinimumCalories">Minimium Calories inputed in box</param>
+        /// <param name="MaximumCalories">Maximum Calories inputed in box</param>
+        public void OnGet(double? MinimumPrice, double? MaximumPrice, int? MinimumCalories, int? MaximumCalories)
         {
-
+            this.minimumPrice = MinimumPrice;
+            this.maximumPrice = MaximumPrice;
+            this.minimumCalories = MinimumCalories;
+            this.maximumCalories = MaximumCalories;
+            search = Request.Query["search"];
+            menuCategory = Request.Query["MenuCategory"];
+            menuItems = Menu.Search(search);
+            menuItems = Menu.FilterByPrice(menuItems, minimumPrice, maximumPrice);
+            menuItems = Menu.FilterByCalories(menuItems, minimumCalories, maximumCalories);
+            menuItems = Menu.FilterByType(menuItems, menuCategory);
         }
     }
 }

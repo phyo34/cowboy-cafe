@@ -144,5 +144,159 @@ namespace CowboyCafe.Data
             return items;
 
         }
+
+     
+
+       
+
+        /// <summary>
+        /// Searches through list for the terms 
+        /// </summary>
+        /// <param name="terms">Terms to search for </param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> Search(string terms)
+        {
+            // TODO: Search database
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            // Return all movies if there are no search terms
+            if (terms == null) return MenuOrder();
+
+
+            // return each movie in the database containing the terms substring
+            foreach (IOrderItem item in MenuOrder())
+            {
+                if (item.ToString() != null && item.ToString().Contains(terms, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    results.Add(item); ;
+                }
+            }
+
+            return results;
+
+        }
+
+        /// <summary>
+        /// Filters list by category
+        /// </summary>
+        /// <param name="items">Items to filter out</param>
+        /// <param name="menuCategories">Categories to filter by</param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByType(IEnumerable<IOrderItem> items, string[] menuCategories)
+        {
+            if (menuCategories == null || menuCategories.Length == 0) return items;
+            List<IOrderItem> result = new List<IOrderItem>();
+            foreach (string menuCategory in menuCategories)
+            {
+                switch (menuCategory)
+                {
+                    case "Entree":
+                        foreach (IOrderItem item in items)
+                        {
+                            if (item is Entree) result.Add(item);
+                        }
+                        break;
+                    case "Side":
+                        foreach (IOrderItem item in items)
+                        {
+                            if (item is Side) result.Add(item);
+                        }
+                        break;
+                    case "Drink":
+                        foreach (IOrderItem item in items)
+                        {
+                            if (item is Drink) result.Add(item);
+                        }
+                        break;
+                    default:
+                        return items;
+                }
+            }
+            return result;
+        }
+        /// <summary>
+        /// Filters by a minimum and maximum calorie 
+        /// </summary>
+        /// <param name="items">Items to filter</param>
+        /// <param name="min">Minimum calories</param>
+        /// <param name="max">Maximum calories</param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, double? min, double? max)
+        {
+            if (min == null && max == null) return items;
+            var results = new List<IOrderItem>();
+
+            if (min == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Calories <= max) results.Add(item);
+                }
+                return results;
+            }
+            if (max == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Calories >= min) results.Add(item);
+                }
+                return results;
+            }
+            foreach (IOrderItem item in items)
+            {
+                if (item.Calories >= min && item.Calories <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+
+        /// <summary>
+        /// Filter by Price
+        /// </summary>
+        /// <param name="items">IEnumerable of items</param>
+        /// <param name="min">Minimum Price</param>
+        /// <param name="max">Maximum Price</param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
+        {
+            if (min == null & max == null) return items;
+
+            if (items == null) return null;
+
+            var results = new List<IOrderItem>();
+
+            if (min == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price <= max) results.Add(item);
+                }
+
+                return results;
+            }
+
+            if (max == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price >= min) results.Add(item);
+                }
+
+                return results;
+            }
+
+            foreach (IOrderItem item in items)
+            {
+                if (item.Price >= min & item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
     }
 }
