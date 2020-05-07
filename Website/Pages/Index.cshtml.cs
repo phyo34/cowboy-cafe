@@ -3,7 +3,6 @@
  * Page represents the menu/home page
  * 
  */
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -22,13 +21,14 @@ namespace Website.Pages
         {
             _logger = logger;
         }
+
         /// <summary>
         /// Enumerable list of menu items based on filter items
         /// </summary>
-        public IEnumerable<IOrderItem> menuItems { get; protected set; }
+        public IEnumerable<IOrderItem> menuItems { get; protected set; } = Menu.MenuOrder();
 
         /// <summary>
-        /// Search terms to filter out
+        /// Gets term to search by 
         /// </summary>
         [BindProperty]
         public string search { get; set; }
@@ -40,34 +40,40 @@ namespace Website.Pages
         public string[] menuCategory { get; set; }
 
         /// <summary>
-        /// Minimum price inputed
+        /// Minimum price 
         /// </summary>
         [BindProperty]
         public double? minimumPrice { get; set; }
 
         /// <summary>
-        /// Maximum price inputed
+        /// Maximum price 
         /// </summary>
         [BindProperty]
         public double? maximumPrice { get; set; }
 
         /// <summary>
-        /// Minimum calories selected
+        /// Minimum calories 
         /// </summary>
         [BindProperty]
         public int? minimumCalories { get; set; }
 
         /// <summary>
-        /// Maximum calories selected
+        /// Maximum calories 
         /// </summary>
         [BindProperty]
         public int? maximumCalories { get; set; }
 
         /// <summary>
-        /// Count for determining items in each column
+        /// Counts items 
         /// </summary>
         [BindProperty]
         public int Count { get; set; } = 0;
+
+        /// <summary>
+        /// Gets and set jerked soda flavors
+        /// </summary>
+        [BindProperty]
+        public bool RetrieveJerkedSoda { get; set; } = false;
 
         /// <summary>
         /// Filter menu
@@ -84,10 +90,11 @@ namespace Website.Pages
             this.maximumCalories = MaximumCalories;
             search = Request.Query["search"];
             menuCategory = Request.Query["MenuCategory"];
-            menuItems = Menu.Search(search);
+            menuItems = Menu.Search(menuItems, search);
             menuItems = Menu.FilterByPrice(menuItems, minimumPrice, maximumPrice);
             menuItems = Menu.FilterByCalories(menuItems, minimumCalories, maximumCalories);
             menuItems = Menu.FilterByType(menuItems, menuCategory);
         }
+     
     }
 }

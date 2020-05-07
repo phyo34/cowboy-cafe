@@ -15,7 +15,7 @@ namespace CowboyCafe.Data
     /// Enumarator for the soda flavors 
     /// </summary>
     public enum SodaFlavor
-    {
+    {   
         CreamSoda, 
         OrangeSoda, 
         Sarsparilla,

@@ -220,19 +220,21 @@ namespace CowboyCafe.DataTests
         }
 
         /// <summary>
-        /// Test Filter by term
+        /// Filter all items by term entered with given theory data
         /// </summary>
-        /// <param name="term">term</param>
-        /// <param name="expectedNumberOfItems">num of items returned</param>
+        /// <param name="term">Term to filter by</param>
+        /// <param name="expectedNumberOfItems">Number of items to expect when filtering</param>
         [Theory]
-        [InlineData("Pulled", 1)]
-        [InlineData(null, 31)]
+        [InlineData("Cowboy", 4)]
+        [InlineData(null, 3)]
         [InlineData("", 31)]
-        [InlineData("Chil", 4)]
+        [InlineData("Pulled", 3)]
+
         public void ShouldFilterByTerm(string term, int expectedNumberOfItems)
         {
-            Assert.Equal(expectedNumberOfItems, Menu.Search(term).Count());
+            Assert.Equal(expectedNumberOfItems, Menu.Search(Menu.MenuOrder(),term).Count());
         }
+
 
         /// <summary>
         /// Tests Filter by type 

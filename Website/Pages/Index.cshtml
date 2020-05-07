@@ -25,84 +25,120 @@
         }
         else
         {
-    <div class="col-sm">
-        <center>
-            <img class="marginauto" src="~/images/entree.png" alt="centered image" width="170" height="170" />
-        </center>
-        @foreach (IOrderItem item in @Model.menuItems)
-        {
-            <div class="menu-item">
-                @if (item is Entree)
+            <div class="col-sm">
+                <center>
+                    <img class="marginauto" src="~/images/entree.png" alt="centered image" width="170" height="170" />
+                </center>
+                @foreach (IOrderItem item in @Model.menuItems)
                 {
-                    <span>@item<br /></span>
-                    <span>Price: @string.Format("{0:C}", item.Price)<br /></span>
-                    <span>Calories: @item.Calories<br /><br /></span>
-                    Model.Count++;
+                    <div class="menu-item">
+                        @if (item is Entree)
+                        {
+                            <span>@item<br /></span>
+                            <span>Price: @string.Format("{0:C}", item.Price)<br /></span>
+                            <span>Calories: @item.Calories<br /><br /></span>
+                            Model.Count++;
+                        }
+                    </div>
+                }
+                @if (Model.Count == 0)
+                {
+                    <h5>No Entrees Available.</h5>
+                }
+                else
+                {
+                    Model.Count = 0;
                 }
             </div>
-        }
-        @if (Model.Count == 0)
-        {
-            <h5>No Entrees Available.</h5>
-        }
-        else
-        {
-            Model.Count = 0;
-        }
-    </div>
 
-    <div class="col-sm">
-        <center>
-            <img class="marginauto" src="~/images/Sides.png" alt="centered image" width="200" height="200" />
-        </center>
-        @foreach (IOrderItem item in @Model.menuItems)
-        {
-            <div class="menu-item">
-                @if (item is Side)
+            <div class="col-sm">
+                <center>
+                    <img class="marginauto" src="~/images/Sides.png" alt="centered image" width="200" height="200" />
+                </center>
+                @foreach (IOrderItem item in @Model.menuItems)
                 {
-                    <span>@item<br /></span>
-                    <span>Price: @string.Format("{0:C}", item.Price)<br /></span>
-                    <span>Calories: @item.Calories<br /><br /></span>
-                    Model.Count++;
+                    <div class="menu-item">
+                        @if (item is Side)
+                        {
+                            <span>@item<br /></span>
+                            <span>Price: @string.Format("{0:C}", item.Price)<br /></span>
+                            <span>Calories: @item.Calories<br /><br /></span>
+                            Model.Count++;
+                        }
+                    </div>
+                }
+                @if (Model.Count == 0)
+                {
+                    <h5>No Sides Available.</h5>
+                }
+                else
+                {
+                    Model.Count = 0;
                 }
             </div>
-        }
-        @if (Model.Count == 0)
-        {
-            <h5>No Sides Available.</h5>
-        }
-        else
-        {
-            Model.Count = 0;
-        }
-    </div>
 
-    <div class="col-sm">
-        <center>
-            <img class="marginauto" src="~/images/drinks.png" alt="centered image" width="200" height="200" />
-        </center>
-        @foreach (IOrderItem item in @Model.menuItems)
-        {
-            <div class="menu-item">
-                @if (item is Drink)
+            <div class="col-sm">
+                <center>
+                    <img class="marginauto" src="~/images/drinks.png" alt="centered image" width="200" height="200" />
+                </center>
+                @foreach (IOrderItem item in @Model.menuItems)
                 {
-                    <span>@item<br /></span>
-                    <span>Price: @string.Format("{0:C}", item.Price)<br /></span>
-                    <span>Calories: @item.Calories<br /><br /></span>
-                    Model.Count++;
+                    <div class="menu-item">
+                        @if (item is Drink)
+                        {
+                            <span>@item<br /></span>
+                            <span>Price: @string.Format("{0:C}", item.Price)<br /></span>
+                            <span>Calories: @item.Calories<br /><br /></span>
+                            Model.Count++;
+                        }
+                    </div>
+                }
+                @if (Model.Count == 0)
+                {
+                    <h5>No Drinks Available.</h5>
+                }
+                else
+                {
+                    Model.Count = 0;
+                }
+                @foreach (IOrderItem item in Model.menuItems)
+                {
+                    if (item is JerkedSoda)
+                    {
+                        Model.RetrieveJerkedSoda = true;
+                    }
+                }
+                @if (Model.RetrieveJerkedSoda == true)
+                {
+                    <h4><u>Soda Flavors:</u></h4>
+                    @foreach (SodaFlavor flavor in Enum.GetValues(typeof(SodaFlavor)))
+                    {
+                        if (flavor == SodaFlavor.BirchBeer)
+                        {
+                            <span>@flavor<br /></span>
+
+                        }
+                        if (flavor == SodaFlavor.CreamSoda)
+                        {
+                            <span>@flavor<br /></span>
+                        }
+                        if (flavor == SodaFlavor.OrangeSoda)
+                        {
+                            <span>@flavor<br /></span>
+                        }
+                        if (flavor == SodaFlavor.RootBeer)
+                        {
+                            <span>@flavor<br /></span>
+                        }
+                        if (flavor == SodaFlavor.Sarsparilla)
+                        {
+                            <span>@flavor<br /></span>
+                        }
+                    }
+
                 }
             </div>
-        }
-        @if (Model.Count == 0)
-        {
-            <h5>No Drinks Available.</h5>
-        }
-        else
-        {
-            Model.Count = 0;
-        }
 
-    </div>
 
             <div class="col-md">
                 <div class="search-bar">
